@@ -3,6 +3,7 @@
 !.tmux.conf
 !.gdbinit
 !.xinitrc
+!README.md
 !scripts/
 !scripts/**
 !.config/

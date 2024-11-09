@@ -1,36 +1,23 @@
-{ ... }:
- {
+{ pkgs, ... }:
+
+let
+  alacrittyCatppuccinTheme = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "alacritty";
+    rev = "f6cb5a5c2b404cdaceaff193b9c52317f62c62f7";
+    sha256 = "1r2z223hza63v5lmzlg3022mlar67j3a2gh41rsaiqwja2wyiihz";
+  };
+  themeName = "catppuccin-mocha";
+in
+{
+  home.file.".config/alacritty/${themeName}.toml".source = "${alacrittyCatppuccinTheme}/${themeName}.toml";
+
   programs.alacritty = {
     enable = true;
 
     settings = {
       live_config_reload = true;
-      colors = {
-        bright = {
-          black   = "#50545B";
-          blue    = "#6CB8F9";
-          cyan    = "#5FC0CC";
-          green   = "#A2CD83";
-          magenta = "#D282E7";
-          red     = "#EA757E";
-          white   = "#B5BCC9";
-          yellow  = "#EFCA84";
-        };
-        normal = {
-          black   = "#32363D";
-          blue    = "#62AEEF";
-          cyan    = "#55B6C2";
-          green   = "#98C379";
-          magenta = "#C778DD";
-          red     = "#E06B74";
-          white   = "#ABB2BF";
-          yellow  = "#E5C07A";
-        };
-        primary = {
-          background = "#1E2128";
-          foreground = "#ABB2BF";
-        };
-      };
+      import = [ "~/.config/alacritty/${themeName}.toml" ];
 
       font = {
         size = 11;
