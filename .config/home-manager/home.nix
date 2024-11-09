@@ -24,7 +24,6 @@ in
 
     home.username = "jayden";
     home.homeDirectory = "/home/jayden";
-
     home.stateVersion = "23.11";
 
     home.packages = with pkgs; [
@@ -43,7 +42,7 @@ in
       easyeffects
       feh
       ffmpegthumbnailer
-      firefox
+      # firefox
       gimp
       gnome.nautilus
       godot_4

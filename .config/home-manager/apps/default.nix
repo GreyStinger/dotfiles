@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./dunst.nix
+    ./firefox.nix
     ./flameshot.nix
     ./mpv.nix
     ./nixcord.nix

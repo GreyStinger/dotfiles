@@ -183,6 +183,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1731170586,
+        "narHash": "sha256-KXi75VysPFOBAVoghxrWMpVcrg4+pvMB5KTelhDgHn4=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "2c6a32edcf1da50be71b6ad96b8a3e99cbdeb744",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "goplaying": "goplaying",
@@ -190,6 +205,7 @@
         "nix-colors": "nix-colors",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_3",
+        "nur": "nur",
         "spicetify-nix": "spicetify-nix"
       }
     },

@@ -10,7 +10,7 @@
     };
     config = {
       themeLinks = [
-        "https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/midnight.theme.css"
+        "https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"
       ];
       frameless = true;
       disableMinSize = true;

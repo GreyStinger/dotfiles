@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.url = "github:nix-community/NUR";
     nix-colors.url = "github:misterio77/nix-colors";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -21,11 +22,12 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nix-colors, goplaying, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, nix-colors, goplaying, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "jayden";
       pkgs = nixpkgs.legacyPackages.${system};
+      nurPkgs = import nur { inherit pkgs; };
     in {
       homeConfigurations."jayden" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -39,7 +41,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
         extraSpecialArgs = {
-          inherit inputs nix-colors username;
+          inherit nurPkgs inputs nix-colors username;
         };
       };
     };
