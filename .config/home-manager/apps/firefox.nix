@@ -15,7 +15,7 @@
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-bin;
-    profiles.jayden = {
+    profiles.${config.home.username} = {
       extensions = [
         addons.ublock-origin
         addons.sponsorblock

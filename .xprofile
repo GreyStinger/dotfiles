@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+	eval $(dbus-launch --exit-with-session --sh-syntax)
+fi
+systemctl --user import-environment DISPLAY XAUTHORITY
+
+if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+        dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
+
+export DISPLAY=:0.0 # for gtk ssws?
+
+if command -v xrdb >/dev/null 2>&1; then
+    xrdb -merge ~/.Xresources
+else
+    echo "xrdb is not installed. Skipping .Xresources merge."
+fi
+
+bash ~/.config/xinit/scripts/setbg.sh &
+
+picom &
+dwmblocks &
+
