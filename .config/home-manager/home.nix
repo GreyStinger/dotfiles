@@ -41,7 +41,6 @@ in
       cbonsai
       dbeaver-bin
       easyeffects
-      emacs
       feh
       ffmpegthumbnailer
       firefox
@@ -67,6 +66,7 @@ in
       peaclock
       pipes-rs
       pfetch
+      rclone
       sioyek
       starship
       sqlite
