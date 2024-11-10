@@ -71,6 +71,7 @@ in
       peaclock
       pipes-rs
       pfetch
+      qbittorrent
       rclone
       sioyek
       starship
