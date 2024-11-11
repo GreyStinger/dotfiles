@@ -2,7 +2,6 @@
   description = "Home Manager configuration of dev";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -22,7 +21,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, nix-colors, goplaying, ... }@inputs:
+  outputs = inputs@{ nixpkgs, home-manager, nur, nix-colors, goplaying, ... }:
     let
       system = "x86_64-linux";
       username = "jayden";
@@ -32,14 +31,10 @@
       homeConfigurations."jayden" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
         modules = [
           ./home.nix
         ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
         extraSpecialArgs = {
           inherit nurPkgs inputs nix-colors username;
         };

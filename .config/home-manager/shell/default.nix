@@ -16,6 +16,8 @@
     ./neofetch.nix
     ./ranger.nix
     ./starship.nix
+    ./tmux.nix
+    ./xrecources.nix
     ./zoxide.nix
     ./zsh.nix
   ];

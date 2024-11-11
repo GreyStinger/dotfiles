@@ -9,12 +9,6 @@ let
   overlays = [
     (import /home/jayden/.config/nixpkgs/overlays/zapzap.nix)
   ];
-  catppuccinXresourcesRepo = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "xresources";
-    rev = "41afcd788311ea2fce124029d9a02e2d65e0b3e6";
-    sha256 = "0mn88af5y8z4riasg045q1xqfblcqv0f56j9fmy8c6f3k1nmzv7m";
-  };
 in
   {
     imports = [
@@ -27,11 +21,12 @@ in
     ];
 
     colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
-    home.file.".Xresources".source = "${catppuccinXresourcesRepo}/themes/mocha.Xresources";
 
     home.username = "jayden";
     home.homeDirectory = "/home/jayden";
     home.stateVersion = "23.11";
+
+    fonts.fontconfig.enable = true;
 
     home.packages = with pkgs; [
       inputs.goplaying.packages.${system}.default
@@ -44,7 +39,6 @@ in
       calf
       clang
       clipster
-      cbonsai
       dbeaver-bin
       easyeffects
       feh
@@ -69,17 +63,14 @@ in
       openssl
       pavucontrol
       peaclock
-      pipes-rs
       pfetch
       qbittorrent
       rclone
       sioyek
-      starship
       sqlite
       telegram-desktop
       texliveBasic
       thunderbird
-      tmux
       ripgrep
       ueberzugpp         # ranger preview
       upower
