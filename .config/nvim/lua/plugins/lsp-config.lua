@@ -3,21 +3,8 @@ return {
   lazy = true,
   event = "BufReadPre",
   config = function()
-    require'lspconfig'.ccls.setup({})
-
-    -- require("lspconfig").phpactor.setup({
-    --   init_options = {
-    --     ["language_server_phpstan.enabled"] = false,
-    --     ["language_server_psalm.enabled"] = false,
-    --   },
-    -- })
-
+    require('lspconfig').ccls.setup({})
     require('lspconfig').lemminx.setup({}) -- XML language server
-    -- require('lspconfig').metals.setup({
-    --   filetypes = { "scala", "sbt", "java" }
-    -- }) -- Scala language server
-    -- require('lspconfig').bashls.setup({})
-    -- require('lspconfig').pyright.setup({})
   end,
   keys = {
     {'gD', function() vim.lsp.buf.declaration() end, desc = "Goto Declaration"}, -- Where a key is declared
