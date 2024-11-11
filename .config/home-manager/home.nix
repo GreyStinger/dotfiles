@@ -15,8 +15,10 @@ in
       nix-colors.homeManagerModules.default
       inputs.nixcord.homeManagerModules.nixcord
       inputs.spicetify-nix.homeManagerModules.default
+      ./common
       ./git
       ./apps
+      ./services
       ./shell
     ];
 
@@ -77,7 +79,6 @@ in
       vlc
       wacomtablet
       xdotool
-      zathura
       zapzap
       zoom-us
     ];

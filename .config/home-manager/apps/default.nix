@@ -3,14 +3,14 @@
 {
   imports = [
     ./alacritty.nix
-    ./dunst.nix
     ./firefox.nix
-    ./flameshot.nix
     ./kitty.nix
     ./mpv.nix
     ./nixcord.nix
+    ./qutebrowser.nix
     ./spicetify.nix
     ./yt-dlp.nix
+    ./zathura.nix
   ];
 }
 

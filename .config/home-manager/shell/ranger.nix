@@ -6,12 +6,10 @@
     aliases = {
       e = "edit";
     };
-    # mappings = {
-    #   W = "set_wallpaper";
-    # };
     settings = {
       preview_images = true;
       preview_images_method = "ueberzug";
+      # preview_images_method = "kitty";
       preview_script = "~/.config/ranger/scope.sh";
       vcs_aware = true;
       draw_borders = "both";

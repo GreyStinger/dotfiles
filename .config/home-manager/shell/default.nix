@@ -12,8 +12,10 @@
     ./btop.nix
     ./cava.nix
     ./dircolors.nix
+    ./eza.nix
     ./fzf.nix
     ./neofetch.nix
+    ./newsboat.nix
     ./ranger.nix
     ./starship.nix
     ./tmux.nix
