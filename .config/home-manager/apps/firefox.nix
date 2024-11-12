@@ -1,16 +1,16 @@
 { config, pkgs, nurPkgs, ... }:
 
-  let
-    lock-false = {
-      Value = false;
-      Status = "locked";
-    };
-    lock-true = {
-      Value = true;
-      Status = "locked";
-    };
-    addons = nurPkgs.repos.rycee.firefox-addons;
-  in
+let
+  lock-false = {
+    Value = false;
+    Status = "locked";
+  };
+  lock-true = {
+    Value = true;
+    Status = "locked";
+  };
+  addons = nurPkgs.repos.rycee.firefox-addons;
+in
 {
   programs.firefox = {
     enable = true;

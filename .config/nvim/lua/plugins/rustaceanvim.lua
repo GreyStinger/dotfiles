@@ -1,5 +1,6 @@
 return {
   'mrcjkb/rustaceanvim',
+  enabled = true,
   event = "VeryLazy",
   version = false,
   lazy = false,

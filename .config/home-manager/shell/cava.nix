@@ -1,4 +1,5 @@
 { config, ... }:
+
 {
   programs.cava = {
     enable = true;
@@ -21,21 +22,21 @@
         mono_option = "average";
       };
       smoothing = {
-        noise_reduction = 88;
+        noise_reduction = 60;
         gravity = 100;
         integral = 0;
       };
       color = {
-        # foreground = "'#${config.colorScheme.palette.base06}'";
-        # background = "'#${config.colorScheme.palette.base00}'";
-        # gradient = 1;
-        # gradient_count = 6;
-        # gradient_color_1 = "'#${config.colorScheme.palette.base0B}'";
-        # gradient_color_2 = "'#${config.colorScheme.palette.base0B}'";
-        # gradient_color_3 = "'#${config.colorScheme.palette.base0A}'";
-        # gradient_color_4 = "'#${config.colorScheme.palette.base0A}'";
-        # gradient_color_5 = "'#${config.colorScheme.palette.base08}'";
-        # gradient_color_6 = "'#${config.colorScheme.palette.base08}'";
+        foreground = "'#${config.colorScheme.palette.base06}'";
+        background = "'#${config.colorScheme.palette.base00}'";
+        gradient = 1;
+        gradient_count = 6;
+        gradient_color_1 = "'#${config.colorScheme.palette.base0B}'";
+        gradient_color_2 = "'#${config.colorScheme.palette.base0B}'";
+        gradient_color_3 = "'#${config.colorScheme.palette.base0A}'";
+        gradient_color_4 = "'#${config.colorScheme.palette.base0A}'";
+        gradient_color_5 = "'#${config.colorScheme.palette.base08}'";
+        gradient_color_6 = "'#${config.colorScheme.palette.base08}'";
       };
       eq = {
         "1" = 1; # bass
