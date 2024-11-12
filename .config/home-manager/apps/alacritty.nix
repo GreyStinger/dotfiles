@@ -10,7 +10,7 @@ let
   themeName = "catppuccin-mocha";
 in
 {
-  home.file.".config/alacritty/${themeName}.toml".source = "${alacrittyCatppuccinTheme}/${themeName}.toml";
+  xdg.configFile."alacritty/${themeName}.toml".source = "${alacrittyCatppuccinTheme}/${themeName}.toml";
 
   programs.alacritty = {
     enable = true;

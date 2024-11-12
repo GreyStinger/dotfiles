@@ -66,6 +66,7 @@ in
       pavucontrol
       peaclock
       pfetch
+      picom
       qbittorrent
       rclone
       sioyek
