@@ -1,10 +1,5 @@
 { config , inputs , nix-colors , username , pkgs , ... }:
 
-let
-  overlays = [
-    (import /home/jayden/.config/nixpkgs/overlays/zapzap.nix)
-  ];
-in
 {
   imports = [
     nix-colors.homeManagerModules.default
@@ -82,7 +77,6 @@ in
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
     };
-    overlays = overlays;
   };
 
   dconf.settings = {

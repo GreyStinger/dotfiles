@@ -17,7 +17,7 @@
       url = "github:kaylorben/nixcord";
     };
     goplaying = {
-      url = "path:/home/jayden/oss/goplaying";
+      url = "github:justinmdickey/goplaying";
     };
   };
 

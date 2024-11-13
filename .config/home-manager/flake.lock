@@ -52,14 +52,17 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1731525889,
-        "narHash": "sha256-rMjCx2CObOcmsq29ea6AUd5/Omej447sSk/2t4LZCpA=",
-        "path": "/home/jayden/oss/goplaying",
-        "type": "path"
+        "lastModified": 1730225585,
+        "narHash": "sha256-93Fe4rLNX+OFUpkoynN+l+BASUnmn/j//8qBDrT9hmM=",
+        "owner": "justinmdickey",
+        "repo": "goplaying",
+        "rev": "7c37bd914d1d8f74f903a414122fc191f22790c5",
+        "type": "github"
       },
       "original": {
-        "path": "/home/jayden/oss/goplaying",
-        "type": "path"
+        "owner": "justinmdickey",
+        "repo": "goplaying",
+        "type": "github"
       }
     },
     "home-manager": {
@@ -69,11 +72,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731235328,
-        "narHash": "sha256-NjavpgE9/bMe/ABvZpyHIUeYF1mqR5lhaep3wB79ucs=",
+        "lastModified": 1731535640,
+        "narHash": "sha256-2EckCJn4wxran/TsRiCOFcmVpep2m9EBKl99NBh2GnM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "60bb110917844d354f3c18e05450606a435d2d10",
+        "rev": "35b055009afd0107b69c286fca34d2ad98940d57",
         "type": "github"
       },
       "original": {
@@ -185,11 +188,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1731522829,
-        "narHash": "sha256-LWkO4ks0y4A9LAlahNWC+ZY5nYjL6ylFT0gmvHStJsA=",
+        "lastModified": 1731530667,
+        "narHash": "sha256-/EBYF3f2kAPX3IOwxcjP/KTvXeX9b2cZyxgxGvp+XWI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2647900a849e6ca7929585515fa96c90572a59c8",
+        "rev": "481bba9ab4c2054b7cac86ee3be24f67e5256820",
         "type": "github"
       },
       "original": {
