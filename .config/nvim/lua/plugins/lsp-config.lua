@@ -4,6 +4,7 @@ return {
   event = "BufReadPre",
   config = function()
     require('lspconfig').ccls.setup({})
+    require('lspconfig').csharp_ls.setup({})
     require('lspconfig').lemminx.setup({}) -- XML language server
   end,
   keys = {

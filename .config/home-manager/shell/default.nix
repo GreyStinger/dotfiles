@@ -10,6 +10,7 @@
     ./eza.nix
     ./fzf.nix
     ./neofetch.nix
+    ./nh.nix
     ./newsboat.nix
     ./ranger.nix
     ./starship.nix

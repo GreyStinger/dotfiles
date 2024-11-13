@@ -16,8 +16,8 @@ in
     font = { name = "JetBrains Mono"; };
     keybindings = {
       # Rebinds for tmux
-      "alt+left"         = "previous_tab";
-      "alt+right"        = "next_tab";
+      "alt+shift+left"   = "previous_tab";
+      "alt+shift+right"  = "next_tab";
       "ctrl+shift+left"  = "no_op";
       "ctrl+shift+right" = "no_op";
     };
