@@ -156,11 +156,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1731245184,
-        "narHash": "sha256-vmLS8+x+gHRv1yzj3n+GTAEObwmhxmkkukB2DwtJRdU=",
+        "lastModified": 1731531548,
+        "narHash": "sha256-sz8/v17enkYmfpgeeuyzniGJU0QQBfmAjlemAUYhfy8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "aebe249544837ce42588aa4b2e7972222ba12e8f",
+        "rev": "24f0d4acd634792badd6470134c387a3b039dace",
         "type": "github"
       },
       "original": {
@@ -172,15 +172,15 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1731139594,
-        "narHash": "sha256-IigrKK3vYRpUu+HEjPL/phrfh7Ox881er1UEsZvw9Q4=",
-        "owner": "nixos",
+        "lastModified": 1731319897,
+        "narHash": "sha256-PbABj4tnbWFMfBp6OcUK5iGy1QY+/Z96ZcLpooIbuEI=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "76612b17c0ce71689921ca12d9ffdc9c23ce40b2",
+        "rev": "dc460ec76cbff0e66e269457d7b728432263166c",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -188,11 +188,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1731530667,
-        "narHash": "sha256-/EBYF3f2kAPX3IOwxcjP/KTvXeX9b2cZyxgxGvp+XWI=",
+        "lastModified": 1731571649,
+        "narHash": "sha256-StGVrpFI6dKODTLNAW1SRDxdttnukjLTW8UmR3Nx6es=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "481bba9ab4c2054b7cac86ee3be24f67e5256820",
+        "rev": "da115e2e9d97361d93b0d0d0f4a0b22641658907",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731471404,
-        "narHash": "sha256-xrqZLeXOI5qm90iN5sgyINMU2621jf+WBMJivpTNEWc=",
+        "lastModified": 1731557792,
+        "narHash": "sha256-iJFS4r7Xq/kQhNBjpJWSEFxIT64n/0yrWJacXrGBUZY=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "c80ea8541d55731f143828a574e00d50553e9c7c",
+        "rev": "f3d47cf8367147ed057e55e47999f1fbabbb77a0",
         "type": "github"
       },
       "original": {

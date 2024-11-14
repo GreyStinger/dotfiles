@@ -68,7 +68,7 @@
     vlc
     wacomtablet
     xdotool
-    zapzap             # native-ish whatsapp client using pyqt
+    # zapzap             # native-ish whatsapp client using pyqt
     zoom-us
   ];
 
