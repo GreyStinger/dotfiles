@@ -5,6 +5,7 @@
     nix-colors.homeManagerModules.default
     inputs.nixcord.homeManagerModules.nixcord
     inputs.spicetify-nix.homeManagerModules.default
+    ./system/apollo.nix
     ./common
     ./git
     ./apps
