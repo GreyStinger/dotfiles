@@ -1,11 +1,10 @@
 { lib, pkgs, config, ... }:
 
-let
-  dataProjectsDirSrc  = "/data/jayden/projects";
-  homeProjectsDirDest = "${config.home.homeDirectory}/Projects";
-in
 {
-  home.activation.symlinkActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ln -sf ${dataProjectsDirSrc} ${homeProjectsDirDest}
-  '';
+  home.file."Projects".source =
+    config.lib.file.mkOutOfStoreSymlink /data/jayden/projects;
+  home.file."darkmx".source =
+    config.lib.file.mkOutOfStoreSymlink /data/jayden/shares/darkmx;
+  home.file."fopnu".source =
+    config.lib.file.mkOutOfStoreSymlink /data/jayden/shares/fopnu;
 }

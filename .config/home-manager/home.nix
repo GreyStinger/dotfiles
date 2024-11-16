@@ -39,6 +39,7 @@
     feh
     ffmpegthumbnailer
     gimp
+    glib.dev
     godot_4
     hamster
     heroic
@@ -63,6 +64,7 @@
     telegram-desktop
     texliveBasic
     thunderbird
+    tor-browser-bundle-bin
     ripgrep
     ueberzugpp         # ranger preview
     upower
