@@ -13,6 +13,7 @@
       lm="ls -m";
       update = "home-manager switch --impure";
       sys-update = "sudo nixos-rebuild switch --flake /etc/nixos#default";
+      set-multimon = "feh --bg-fill ~/.config/xinit/bg0.jpg --bg-fill ~/.config/xinit/bg2.png";
     };
     oh-my-zsh = {
       enable = true;
