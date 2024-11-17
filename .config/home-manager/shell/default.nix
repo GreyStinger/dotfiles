@@ -8,8 +8,8 @@
     ./cava.nix
     ./dircolors.nix
     ./eza.nix
+    ./fastfetch.nix
     ./fzf.nix
-    ./neofetch.nix
     ./nh.nix
     ./newsboat.nix
     ./ranger.nix

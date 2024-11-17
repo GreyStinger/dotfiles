@@ -11,8 +11,8 @@
       ll="ls -lh";
       la="ls -lAh";
       lm="ls -m";
-      ncls="clear && pfetch && echo \"^^ Nice ^^\"";
-      update = "sudo nixos-rebuild switch";
+      update = "home-manager switch --impure";
+      sys-update = "sudo nixos-rebuild switch --flake /etc/nixos#default";
     };
     oh-my-zsh = {
       enable = true;
