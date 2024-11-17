@@ -3,8 +3,11 @@
 {
   xdg.configFile."fastfetch/democracy_duck.jpg".source = ../assets/democracy_duck.jpg;
 
-  programs.zsh.shellAliases.tfetch = "clear && kitty +kitten icat -n --engine magick --align=left --use-window-size 40,18,1380,1200 ${config.xdg.configHome}/fastfetch/democracy_duck.jpg | fastfetch --raw - --logo-width 40 --logo-height 19";
-
+  # Kind of goofed but I don't have a better solution for in tmux as of yet
+  programs.zsh.shellAliases = {
+    tfetch = "kitty +kitten icat -n --engine magick --align=left --use-window-size 40,18,1380,1200 ${config.xdg.configHome}/fastfetch/democracy_duck.jpg | fastfetch --raw - --logo-width 40 --logo-height 19";
+    ctfetch = "clear && tfetch";
+  };
   programs.fastfetch = {
     enable = true;
     settings = {
