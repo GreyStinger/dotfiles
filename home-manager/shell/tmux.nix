@@ -33,6 +33,10 @@
       # Set bar to top
       set-option -g status-position top
 
+      # Set numbering to start from 0
+      set -g base-index 1
+      setw -g pane-base-index 1
+
       # General
       bind u choose-tree -Z
 
@@ -63,6 +67,7 @@
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "~/.config/tmux/tmux.conf reloaded"
     '';
     plugins          = with pkgs.tmuxPlugins; [
+      resurrect
       {
         plugin      = catppuccin;
         extraConfig = ''

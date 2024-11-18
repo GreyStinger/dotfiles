@@ -32,8 +32,8 @@
       highlight article "\\[[0-9]\\+\\]"                  yellow   default bold
       highlight article "\\[[^0-9].*[0-9]\\+\\]"          magenta  default bold
 
-      show-read-articles no
-      show-read-feeds no
+      show-read-articles yes
+      show-read-feeds yes
 
       articlelist-format " %D | %?T? %-17T | ?%t"
       feedlist-format    " %11u | %t"
@@ -56,9 +56,11 @@
       { url = ''"query:Youtube:tags # \"Youtube\""''; }
       { url = ''"query:Odysee:tags # \"Odysee\""''; }
       { url = ''"query:Blog:tags # \"Blog\""''; }
-      { url = "http://localhost:8000/feed"; }
+      # { url = "http://localhost:8000/feed"; } # Personal feed check for later
 
+      { url = "https://distrowatch.com/news/dw.xml"; title = "Distro Watch"; }
       { url = "http://fitgirl-repacks.site/feed/"; title = "Fitgirl Repacks"; }
+
       #Videos
       ##Youtube
       {
@@ -140,10 +142,7 @@
         url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfg3_hFrOxuEtYMRGsp1ig";
         tags = [ "Youtube" ];
       }
-      #{
-      #url = "https://www.youtube.com/feeds/videos.xml?channel_id="; tags = [ "Youtube" ];
-      #title = "";
-      #}
+
       ##Odysee
       {
         url = "https://odysee.com/$/rss/@Urbandoned:5";
@@ -374,6 +373,13 @@
         ];
       }
       {
+        url = "https://morss.it/https://ziglang.org/news/index.xml";
+        tags = [
+          "Blog"
+          "Programming"
+        ];
+      }
+      {
         url = "https://blog.rust-lang.org/feed.xml";
         tags = [
           "Blog"
@@ -418,13 +424,6 @@
         ];
       }
       {
-        url = "https://morss.it/https://panoptykon.org/rss.xml";
-        tags = [
-          "Blog"
-          "Privacy"
-        ];
-      }
-      {
         url = "https://zettelkasten.de/feed.atom";
         tags = [
           "Blog"
@@ -464,13 +463,6 @@
           "BSD"
           "Retro"
           "Programming"
-        ];
-      }
-      {
-        url = "https://morss.it/https://aliabdaal.com/feed/";
-        tags = [
-          "Blog"
-          "Lifestyle"
         ];
       }
       {
@@ -519,83 +511,15 @@
           "Privacy"
         ];
       }
-      #Twitch?
-      {
-        url = "https://twitchrss.appspot.com/vod/kycu";
-        tags = [ "Twitch" ];
-        title = "Kycu";
-      }
-      {
-        url = "https://twitchrss.appspot.com/vod/slayproxx";
-        tags = [ "Twitch" ];
-        title = "Slay";
-      }
-      {
-        url = "https://twitchrss.appspot.com/vod/cirno_tv";
-        tags = [ "Twitch" ];
-        title = "Cirno";
-      }
-      {
-        url = "https://twitchrss.appspot.com/vod/lcolonq";
-        tags = [ "Twitch" ];
-        title = "lcolonq";
-      }
-      {
-        url = "https://twitchrss.appspot.com/vod/yukievt";
-        tags = [ "Twitch" ];
-        title = "yukievt";
-      }
-      {
-        url = "https://twitchrss.appspot.com/vod/enlynn_";
-        tags = [ "Twitch" ];
-        title = "enlynn_";
-      }
-      #{
-      #url = "https://twitchrss.appspot.com/vod/cirno_tv"; tags = [ "Twitch" ];
-      #}
+
+      # Updates
       {
         url = "https://github.com/NixOS/nixpkgs/commits/master.atom";
         tags = [ "Updates" ];
         title = "nixpkgs";
       }
+
       #News
-      {
-        url = "https://morss.it/https://gazetawroclawska.pl/rss/gazetawroclawska.xml";
-        tags = [ "Wrocław" ];
-      }
-      {
-        url = "https://morss.it/https://www.wroclaw.pl/dla-mieszkanca/rss/";
-        tags = [ "Wrocław" ];
-      }
-      {
-        url = "https://morss.it/https://www.wroclaw.pl/kultura/rss/";
-        tags = [
-          "Wrocław"
-          "Culture"
-        ];
-      }
-      {
-        url = "https://morss.it/https://www.wroclaw.pl/komunikacja/rss/";
-        tags = [ "Wrocław" ];
-      }
-      {
-        url = "https://dcf.wroclaw.pl/feed/";
-        tags = [
-          "Wrocław"
-          "Culture"
-        ];
-      }
-      {
-        url = "https://konwenty-poludniowe.pl/?format=feed&type=atom";
-        tags = [ "Culture" ];
-      }
-      {
-        url = "https://www.internet-czas-dzialac.pl/rss";
-        tags = [
-          "Tech"
-          "Privacy"
-        ];
-      }
       {
         url = "https://morss.it/https://www.theregister.com/headlines.atom";
         tags = [ "Tech" ];

@@ -28,6 +28,7 @@ in
       bold_italic_font        = "auto";
       font_size               = 11;
       window_padding_width    = 2;
+      background_opacity      = 0.8;
       enable_ligatures        = false;
       enable_audio_bell       = false;
       visual_bell             = true;
@@ -38,8 +39,6 @@ in
       confirm_os_window_close = 0;
       active_tab_font_style   = "bold";
       inactive_tab_font_style = "normal";
-      # tab_bar_style           = "separator";
-      # tab_separator           = "\"\"";
       tab_title_template      = " {index}: {title} ";
     };
   };
