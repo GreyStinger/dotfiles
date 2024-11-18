@@ -26,9 +26,10 @@
         gravity = 100;
         integral = 0;
       };
+      # background_opacity = 0.8;
       color = {
         foreground = "'#${config.colorScheme.palette.base06}'";
-        background = "'#${config.colorScheme.palette.base00}'";
+        # background = "'#${config.colorScheme.palette.base00}'";
         gradient = 1;
         gradient_count = 6;
         gradient_color_1 = "'#${config.colorScheme.palette.base0B}'";
