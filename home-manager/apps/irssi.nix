@@ -30,6 +30,28 @@ in
 
   programs.irssi = {
     enable = true;
+    networks = {
+      liberachat = {
+        nick = "GreyJay";
+        server = {
+          address = "irc.libera.chat";
+          port = 6697;
+          autoConnect = true;
+        };
+        channels = {
+          nixos.autoJoin = true;
+          cryschan.autoJoin = true;
+        };
+      };
+      freenode = {
+        nick = "Grey";
+        server = {
+          address = "chat.freenode.net";
+          port = 6697;
+          autoConnect = true;
+        };
+      };
+    };
     extraConfig = ''
       settings = {
         core = {
