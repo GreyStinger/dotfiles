@@ -68,6 +68,7 @@
     ripgrep
     ueberzugpp         # ranger preview
     upower
+    virt-manager
     vlc
     wacomtablet
     xdotool

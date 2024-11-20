@@ -56,6 +56,7 @@
       { url = ''"query:Youtube:tags # \"Youtube\""''; }
       { url = ''"query:Odysee:tags # \"Odysee\""''; }
       { url = ''"query:Blog:tags # \"Blog\""''; }
+      { url = ''"query:News:tags # \"News\""''; }
       # { url = "http://localhost:8000/feed"; } # Personal feed check for later
 
       { url = "https://distrowatch.com/news/dw.xml"; title = "Distro Watch"; }
@@ -74,47 +75,6 @@
         title = "Jeff Geerling";
       }
       {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ6KZTTnkE-s2XFJJmoTAkw";
-        tags = [ "Youtube" ];
-        title = "Accursed Farms";
-      }
-      {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCjREVt2ZJU8ql-NC9Gu-TJw";
-        tags = [ "Youtube" ];
-        title = "Code to the Moon";
-      }
-      {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCNhWSOlt_UoCzS2YSMhHYmA";
-        tags = [ "Youtube" ];
-        title = "Kai Notebook";
-      }
-      {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC8uT9cgJorJPWu7ITLGo9Ww";
-        tags = [ "Youtube" ];
-        title = "The 8-Bit Guy";
-      }
-      {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCoL8olX-259lS1N6QPyP4IQ";
-        tags = [ "Youtube" ];
-        title = "Action Retro";
-      }
-      {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC7yZ6keOGsvERMp2HaEbbXQ";
-        tags = [
-          "Youtube"
-          "Programming"
-        ];
-        title = "devaslife";
-      }
-      {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0lE_IPPXhb_J9sZnMyIEwA";
-        tags = [
-          "Youtube"
-          "Programming"
-        ];
-        title = "llll colonq";
-      }
-      {
         url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA";
         tags = [
           "Youtube"
@@ -123,123 +83,33 @@
         title = "No Boilerplate";
       }
       {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC_zBdZ0_H_jn41FDRG7q4Tw";
-        tags = [
-          "Youtube"
-          "Nix"
-        ];
-        title = "Vimjoyer";
-      }
-      {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC6jUsIEZ2F875OB2Be84cpA";
-        tags = [
-          "Youtube"
-          "Nix"
-        ];
-        title = "Ampersand";
+        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw";
+        tags = [ "Youtube" ];
+        title = "Game Maker's Toolkit";
       }
       {
         url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfg3_hFrOxuEtYMRGsp1ig";
         tags = [ "Youtube" ];
       }
 
-      ##Odysee
-      {
-        url = "https://odysee.com/$/rss/@Urbandoned:5";
-        tags = [ "Odysee" ];
-        title = "Urbandoned";
-      }
-      {
-        url = "https://odysee.com/$/rss/@AlphaNerd:8";
-        tags = [ "Odysee" ];
-        title = "Mental Outlaw";
-      }
-      {
-        url = "https://odysee.com/$/rss/@bugswriter:8";
-        tags = [ "Odysee" ];
-        title = "bugswriter";
-      }
-      {
-        url = "https://odysee.com/$/rss/@DistroTube:2";
-        tags = [ "Odysee" ];
-        title = "DistroTube";
-      }
-      {
-        url = "https://odysee.com/$/rss/@BrodieRobertson:5";
-        tags = [ "Odysee" ];
-        title = "BrodieRobertson";
-      }
+      # Odysee
       {
         url = "https://odysee.com/$/rss/@SomeOrdinaryGamers:a";
         tags = [ "Odysee" ];
         title = "Mutahar";
       }
       {
-        url = "https://odysee.com/$/rss/@thelinuxcast:4";
-        tags = [ "Odysee" ];
-        title = "TheLinuxCast";
-      }
-      {
-        url = "https://odysee.com/$/rss/@rootbsd:6";
-        tags = [ "Odysee" ];
-        title = "Root BSD";
-      }
-      {
-        url = "https://odysee.com/$/rss/@TheOpenBSDGuy:e";
-        tags = [ "Odysee" ];
-        title = "The OpenBSD Guy";
-      }
-      {
-        url = "https://odysee.com/$/rss/@SwindlesMcCoop:1";
-        tags = [ "Odysee" ];
-        title = "SwindlesMcCoop";
-      }
-      {
-        url = "https://odysee.com/$/rss/@adriansdigitalbasement:f";
-        tags = [ "Odysee" ];
-        title = "Adrian's DB";
-      }
-      {
-        url = "https://odysee.com/$/rss/@mechtechkeyboards:b";
-        tags = [ "Odysee" ];
-        title = "Mechkeyboards";
-      }
-      {
-        url = "https://odysee.com/$/rss/@michaelnr0h:7";
-        tags = [ "Odysee" ];
-        title = "Michael Horn";
-      }
-      {
         url = "https://odysee.com/$/rss/@fireship:6";
         tags = [ "Odysee" ];
         title = "Fireship";
       }
-      {
-        url = "https://odysee.com/$/rss/@bryce:c";
-        tags = [ "Odysee" ];
-        title = "Bryce Vandegrift";
-      }
-      {
-        url = "https://odysee.com/$/rss/@EmMerge:f";
-        tags = [ "Odysee" ];
-        title = "Emilia Emerge";
-      }
-      {
-        url = "https://odysee.com/$/rss/@GavinFreeborn:d";
-        tags = [ "Odysee" ];
-        title = "Gavin Freeborn";
-      }
-      #Blog
+
+      # News
+
+      # Blog
       {
         url = "https://moskas.github.io/feed";
         tags = [ "Blog" ];
-      }
-      {
-        url = "https://terrysfreegameoftheweek.com/feed/";
-        tags = [
-          "Games"
-          "Blog"
-        ];
       }
       {
         url = "https://myme.no/atom-feed.xml";
@@ -250,26 +120,30 @@
         ];
       }
       {
-        url = "https://emacsredux.com/atom.xml";
-        tags = [
-          "Tech"
-          "Emacs"
-          "Blog"
-        ];
-      }
-      {
-        url = "https://emacstil.com/feed.xml";
-        tags = [
-          "Tech"
-          "Emacs"
-          "Blog"
-        ];
-      }
-      {
         url = "https://irreal.org/blog/?feed=rss2";
         tags = [
           "Tech"
           "Emacs"
+          "Blog"
+        ];
+      }
+      {
+        url = "https://taonaw.com/feed.xml";
+        tags = [
+          "Tech"
+          "Privacy"
+          "Blog"
+        ];
+      }
+      {
+        url = "https://anniemueller.com/posts_feed";
+        tags = [
+          "Blog"
+        ];
+      }
+      {
+        url = "https://patrickrhone.micro.blog/feed.xml";
+        tags = [
           "Blog"
         ];
       }
@@ -522,7 +396,7 @@
       #News
       {
         url = "https://morss.it/https://www.theregister.com/headlines.atom";
-        tags = [ "Tech" ];
+        tags = [ "News" "Tech" ];
       }
       {
         url = "https://rachelbythebay.com/w/atom.xml";
