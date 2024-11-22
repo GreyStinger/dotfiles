@@ -25,6 +25,9 @@ opt.sidescrolloff = 8 -- Columns of context if nowrap is set
 opt.termguicolors = true -- True color support
 opt.hlsearch = true
 
+-- Zig issues on my machine with fmt :/
+-- vim.g.zig_fmt_autosave = false
+
 opt.syntax = "on"
 vim.cmd("filetype plugin on")
 vim.cmd("filetype plugin indent on")

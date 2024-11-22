@@ -10,8 +10,9 @@
     ./eza.nix
     ./fastfetch.nix
     ./fzf.nix
-    ./nh.nix
+    ./irssi.nix
     ./newsboat.nix
+    ./nh.nix
     ./ranger.nix
     ./starship.nix
     ./tmux.nix

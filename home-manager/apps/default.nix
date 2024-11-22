@@ -4,9 +4,9 @@
   imports = [
     ./alacritty.nix
     ./firefox.nix
-    ./irssi.nix
     ./kitty.nix
     ./mpv.nix
+    ./neovim.nix
     ./nixcord.nix
     ./qutebrowser.nix
     ./spicetify.nix
