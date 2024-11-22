@@ -49,7 +49,7 @@
     krita
     modem-manager-gui
     nautilus
-    neovim
+    # neovim
     nix-index
     nix-prefetch-git
     obs-studio
