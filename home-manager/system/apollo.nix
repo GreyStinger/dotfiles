@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  imports = [ ./apollo/mounted-folders.nix ];
+  imports = [
+    ./apollo/mounted-folders.nix
+    ./apollo/sbt.nix
+  ];
 }

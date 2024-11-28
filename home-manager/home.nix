@@ -38,6 +38,7 @@
     easyeffects
     feh
     ffmpegthumbnailer
+    filezilla
     gimp
     glib.dev
     godot_4
@@ -46,8 +47,11 @@
     imagemagick
     inetutils
     insomnia
+    keepassxc
+    kleopatra
     krita
     modem-manager-gui
+    mutt-wizard
     nautilus
     # neovim
     nix-index
@@ -55,24 +59,25 @@
     obs-studio
     obsidian
     openssl
+    pass
     pavucontrol
     pfetch
-    picom              # TODO Migrate to services .nix
+    picom                       # TODO Migrate to services .nix
+    python312Packages.pygments  # For texlive
     qbittorrent
-    rclone             # For gdrive mount
-    sqlite             # For neovim TimeTracker
+    rclone                      # For gdrive mount
+    sqlite                      # For neovim TimeTracker
     telegram-desktop
-    texliveBasic
+    texliveFull
     thunderbird
     tor-browser-bundle-bin
     ripgrep
-    ueberzugpp         # ranger preview
+    ueberzugpp                  # ranger preview
     upower
     virt-manager
     vlc
     wacomtablet
     xdotool
-    # zapzap             # native-ish whatsapp client using pyqt
     zoom-us
   ];
 
