@@ -47,6 +47,8 @@
       macro s set show-read-articles yes; set show-read-feeds yes; reload
       macro h set show-read-articles no; set show-read-feeds no; reload
 
+      bind-key r toggle-article-read
+
       bind-key l open
       bind-key j down
       bind-key k up

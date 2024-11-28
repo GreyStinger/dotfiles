@@ -11,6 +11,7 @@
     ./fastfetch.nix
     ./fzf.nix
     ./irssi.nix
+    ./neomutt.nix
     ./newsboat.nix
     ./nh.nix
     ./ranger.nix

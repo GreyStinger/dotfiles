@@ -39,8 +39,8 @@ in
           autoConnect = true;
         };
         channels = {
+          "#cryschan".autoJoin = true;
           nixos.autoJoin = true;
-          cryschan.autoJoin = true;
         };
       };
       freenode = {
@@ -48,7 +48,7 @@ in
         server = {
           address = "chat.freenode.net";
           port = 6697;
-          autoConnect = true;
+          autoConnect = false;
         };
       };
     };
