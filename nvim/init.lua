@@ -27,5 +27,6 @@ require("lazy").setup({
 })
 
 require("config.core")
+require("config.autocmds")
 require("config.telescope")
 require("config.clang-format-cfg")

@@ -38,26 +38,6 @@ vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'nt', '<cmd>tabedit | terminal<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
-
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { '*.php' },
-    callback = function()
-        -- vim.opt.foldmethod = 'indent'
-        vim.api.nvim_exec([[
-          autocmd FileType php set iskeyword+=$
-        ]], false)
-    end,
-    group = vim.api.nvim_create_augroup('php autocmds', { clear = true }),
-})
-
 local map = vim.keymap.set
 
 map("n", "<leader>q", ":q<CR>", { noremap = true })

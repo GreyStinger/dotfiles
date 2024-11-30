@@ -1,12 +1,50 @@
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 return {
   'neovim/nvim-lspconfig',
   lazy = true,
   event = "BufReadPre",
   config = function()
-    require('lspconfig').ccls.setup({})
-    require('lspconfig').zls.setup({})
-    require('lspconfig').csharp_ls.setup({})
-    require('lspconfig').lemminx.setup({}) -- XML language server
+    local nvim_lsp = require('lspconfig')
+    nvim_lsp.ccls.setup({})
+    nvim_lsp.zls.setup({})
+    nvim_lsp.csharp_ls.setup({})
+    nvim_lsp.lemminx.setup({}) -- XML language server
+    nvim_lsp.denols.setup({
+      -- on_attach = on_attach,
+      root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+    })
+    nvim_lsp.ts_ls.setup({
+      -- on_attach = on_attach,
+      root_dir = nvim_lsp.util.root_pattern("package.json"),
+      single_file_support = false
+    })
+    nvim_lsp.lua_ls.setup {
+      on_init = function(client)
+        if client.workspace_folders then
+          local path = client.workspace_folders[1].name
+          if vim.uv.fs_stat(path..'/.luarc.json') or vim.uv.fs_stat(path..'/.luarc.jsonc') then
+            return
+          end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+          runtime = {
+            version = 'LuaJIT'
+          },
+          -- Make the server aware of Neovim runtime files
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME
+            }
+          }
+        })
+      end,
+      settings = {
+        Lua = {}
+      }
+    }
   end,
   keys = {
     {'gD', function() vim.lsp.buf.declaration() end, desc = "Goto Declaration"}, -- Where a key is declared

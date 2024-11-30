@@ -41,6 +41,7 @@
     filezilla
     gimp
     glib.dev
+    gnumake
     godot_4
     hamster
     heroic
@@ -50,6 +51,7 @@
     keepassxc
     kleopatra
     krita
+    lua-language-server
     modem-manager-gui
     mutt-wizard
     nautilus
