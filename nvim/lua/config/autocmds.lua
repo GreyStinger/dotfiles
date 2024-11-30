@@ -1,4 +1,5 @@
 local generalSettingsGroup = vim.api.nvim_create_augroup('General Settings', { clear = true })
+local nvimFormatting = vim.api.nvim_create_augroup("LspFormatting", {})
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -17,3 +18,8 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = nvimFormatting,
+  pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
+  command = "undojoin | Neoformat",
+})
