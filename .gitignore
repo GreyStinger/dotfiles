@@ -12,6 +12,8 @@
 !/nixpkgs**
 !/nvim**
 !/qtile**
+!**/mint_install**
+!**/mint_install/**
 /qtile/__**
 !/rofi**
 !/wal**
