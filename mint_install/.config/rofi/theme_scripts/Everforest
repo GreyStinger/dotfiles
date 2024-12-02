@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp -r ~/.config/cozytile/Everforest/. ~/ &&
+wal -b 232A2E -i ~/.config/xinit/qtile_wallpapers/fog_forest_2.png &&
+qtile cmd-obj -o cmd -f restart
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp -r ~/.config/cozytile/Cozy/. ~/ &&
+wal -b 282738 -i ~/.config/xinit/qtile_wallpapers/Aesthetic2.png &&
+qtile cmd-obj -o cmd -f restart
+
