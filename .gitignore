@@ -6,6 +6,7 @@
 !/ranger/
 !/ranger/scope.sh
 !/picom**
+!/cozytile**
 !/xinit**
 !/home-manager**
 !/nixpkgs**
