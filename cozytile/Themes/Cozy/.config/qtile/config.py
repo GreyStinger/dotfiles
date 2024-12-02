@@ -18,6 +18,19 @@ from time import sleep
 
 mod = "mod4"
 terminal = "alacritty"
+foreground_colour                  = "#4B427E"
+secondary_foreground_colour        = "#86918A"
+secondary_bg_colour                = "#232A2E"
+inactive_colour                    = "#232A2E"
+background_colour                  = "#343F44"
+screen_border_colour               = "#343F44"
+current_screen_border_colour       = "#343F44"
+other_current_screen_border_colour = "#343F44"
+other_screen_border_colour         = "#343F44"
+active_colour                      = "#86918A"
+block_highlight_text_colour        = "#D3C6AA"
+highlight_colour                   = "#4B427E"
+urgent_border_colour               = "#343F44"
 
 # █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █▀
 # █░█ ██▄ ░█░ █▄█ █ █░▀█y █▄▀ ▄█
@@ -136,13 +149,13 @@ screens = [
         top=bar.Bar(
             [
                 widget.Spacer(length=15,
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                 ),
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/launch_Icon.png',
                     margin=2,
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                     mouse_callbacks={"Button1":power},
                 ),
 
@@ -154,24 +167,24 @@ screens = [
                     fontsize=20,
                     borderwidth=4,
                     highlight_method='block',
-                    active='#86918A',
-                    block_highlight_text_color="#D3C6AA",
-                    highlight_color='#4B427E',
-                    inactive='#232A2E',
-                    foreground='#4B427E',
-                    background='#343F44',
-                    this_current_screen_border='#343F44',
-                    this_screen_border='#343F44',
-                    other_current_screen_border='#343F44',
-                    other_screen_border='#343F44',
-                    urgent_border='#343F44',
+                    active=active_colour,
+                    block_highlight_text_color=block_highlight_text_colour,
+                    highlight_color=highlight_colour,
+                    inactive=inactive_colour,
+                    foreground=foreground_colour,
+                    background=background_colour,
+                    this_current_screen_border=current_screen_border_colour,
+                    this_screen_border=screen_border_colour,
+                    other_current_screen_border=other_current_screen_border,
+                    other_screen_border=other_screen_border_colour,
+                    urgent_border=urgent_border_colour,
                     rounded=True,
                     disable_drag=True,
                 ),
 
                 widget.Spacer(
                     length=8,
-                    background='#343F44',
+                    background=background_colour,
                 ),
 
                 widget.Image(
@@ -180,12 +193,12 @@ screens = [
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/layout.png',
-                    background="#343F44"
+                    background=background_colour
                 ),
 
                 widget.CurrentLayout(
-                    background='#343F44',
-                    foreground='#86918A',
+                    background=background_colour,
+                    foreground=secondary_foreground_colour,
                     fmt='{}',
                     font="JetBrains Mono Bold",
                     fontsize=13,
@@ -198,16 +211,16 @@ screens = [
                 widget.Image(
                     filename='~/.config/qtile/Assets/search.png',
                     margin=2,
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                     mouse_callbacks={"Button1": search},
                 ),
 
                 widget.TextBox(
                     fmt='Search',
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                     font="JetBrains Mono Bold",
                     fontsize=13,
-                    foreground='#86918A',
+                    foreground=secondary_foreground_colour,
                     mouse_callbacks={"Button1": search},
                 ),
 
@@ -216,11 +229,11 @@ screens = [
                 ),
 
                 widget.WindowName(
-                    background = '#343F44',
+                    background = ,
                     format = "{name}",
                     font="JetBrains Mono Bold",
                     fontsize=13,
-                    foreground='#86918A',
+                    foreground=secondary_foreground_colour,
                     empty_group_string = 'Desktop',
 
                 ),
@@ -230,18 +243,18 @@ screens = [
                 ),
 
                 widget.Systray(
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                     fontsize=2,
                 ),
 
                 widget.TextBox(
                     text=' ',
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                 ),
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/6.png',
-                    background='#343F44',
+                    background=background_colour,
                 ),
 
                 widget.Image(
@@ -250,23 +263,23 @@ screens = [
 
                 widget.Net(
                   format=' {up:.0f}{up_suffix}',
-                  background='#343F44',
-                  foreground='#86918A',
+                  background=background_colour,
+                  foreground=secondary_foreground_colour,
                   font="JetBrains Mono Bold",
                   prefix='k',
                 ),
 
                 widget.Image(
                   filename='~/.config/qtile/Assets/Misc/wifi.png',
-                  background='#343F44',
+                  background=background_colour,
                   margin_y=6,
                   margin_x=5,
                 ),
 
                 widget.Net(
                   format='{down:.0f}{down_suffix} ',
-                  background='#343F44',
-                  foreground='#86918A',
+                  background=background_colour,
+                  foreground=secondary_foreground_colour,
                   font="JetBrains Mono Bold",
                   prefix='k',
                 ),
@@ -277,20 +290,20 @@ screens = [
 
                 widget.Spacer(
                   length=6,
-                  background='#343F44',
+                  background=background_colour,
                 ),
 
                 widget.Image(
                   filename='~/.config/qtile/Assets/Misc/cpu.png',
-                  background='#343F44',
+                  background=background_colour,
                   margin_y=6,
                   margin_x=5,
                 ),
 
                 widget.CPU(
                   format='{load_percent}% @ {freq_current}GHz',
-                  background='#343F44',
-                  foreground='#86918A',
+                  background=background_colour,
+                  foreground=secondary_foreground_colour,
                   font="JetBrains Mono Bold",
                 ),
 
@@ -300,26 +313,26 @@ screens = [
 
                 widget.Spacer(
                   length=8,
-                  background='#343F44',
+                  background=background_colour,
                 ),
 
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/Misc/ram.png',
-                    background='#343F44',
+                    background=background_colour,
                 ),
 
 
                 widget.Spacer(
                     length=-7,
-                    background='#343F44',
+                    background=background_colour,
                 ),
 
 
                 widget.Memory(
                     background='#343F44',
                     format='{MemUsed: .0f}{mm}',
-                    foreground='#86918A',
+                    foreground=secondary_foreground_colour,
                     font="JetBrains Mono Bold",
                     fontsize=13,
                     update_interval=5,
@@ -333,13 +346,13 @@ screens = [
 
                 widget.Spacer(
                     length=8,
-                    background='#343F44',
+                    background=background_colour,
                 ),
 
 
                 widget.BatteryIcon(
                     theme_path='~/.config/qtile/Assets/Battery/',
-                    background='#343F44',
+                    background=background_colour,
                     scale=1,
                 ),
 
@@ -347,20 +360,20 @@ screens = [
                 widget.Battery(
                     font="JetBrains Mono Bold",
                     fontsize=13,
-                    background='#343F44',
-                    foreground='#86918A',
+                    background=background_colour,
+                    foreground=secondary_foreground_colour,
                     format='{percent:2.0%}',
                 ),
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/5.png',
-                    background='#343F44',
+                    background=background_colour,
                 ),
 
 
                 widget.Image(
                     filename='~/.config/qtile/Assets/Misc/clock.png',
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                     margin_y=6,
                     margin_x=5,
                 ),
@@ -368,19 +381,19 @@ screens = [
 
                 widget.Clock(
                     format='%I:%M %p',
-                    background='#232A2E',
-                    foreground='#86918A',
+                    background=secondary_bg_colour,
+                    foreground=secondary_foreground_colour,
                     font="JetBrains Mono Bold",
                     fontsize=13,
                 ),
 
                 widget.Spacer(
                     length=18,
-                    background='#232A2E',
+                    background=secondary_bg_colour,
                 ),
             ],
             30,
-            border_color = '#232A2E',
+            border_color = secondary_bg_colour,
             border_width = [0,0,0,0],
             margin = [15,60,6,60],
 
