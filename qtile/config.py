@@ -1,15 +1,11 @@
-    
 #       █████████     ███████    ███████████ █████ █████ ███████████ █████ █████       ██████████
 #      ███░░░░░███  ███░░░░░███ ░█░░░░░░███ ░░███ ░░███ ░█░░░███░░░█░░███ ░░███       ░░███░░░░░█
-#     ███     ░░░  ███     ░░███░     ███░   ░░███ ███  ░   ░███  ░  ░███  ░███        ░███  █ ░ 
-#    ░███         ░███      ░███     ███      ░░█████       ░███     ░███  ░███        ░██████   
-#    ░███         ░███      ░███    ███        ░░███        ░███     ░███  ░███        ░███░░█   
+#     ███     ░░░  ███     ░░███░     ███░   ░░███ ███  ░   ░███  ░  ░███  ░███        ░███  █ ░
+#    ░███         ░███      ░███     ███      ░░█████       ░███     ░███  ░███        ░██████
+#    ░███         ░███      ░███    ███        ░░███        ░███     ░███  ░███        ░███░░█
 #    ░░███     ███░░███     ███   ████     █    ░███        ░███     ░███  ░███      █ ░███ ░   █
 #     ░░█████████  ░░░███████░   ███████████    █████       █████    █████ ███████████ ██████████
-#      ░░░░░░░░░     ░░░░░░░    ░░░░░░░░░░░    ░░░░░       ░░░░░    ░░░░░ ░░░░░░░░░░░ ░░░░░░░░░░ 
-#
-#                                                                                    - DARKKAL44
-  
+#      ░░░░░░░░░     ░░░░░░░    ░░░░░░░░░░░    ░░░░░       ░░░░░    ░░░░░ ░░░░░░░░░░░ ░░░░░░░░░░
 
 
 from libqtile import bar, layout, widget, hook, qtile
@@ -20,17 +16,13 @@ from libqtile.dgroups import simple_key_binder
 from time import sleep
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 
 # █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █▀
 # █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ ▄█
 
-
-
-
 keys = [
-#  D E F A U L T
-
+    # D E F A U L T
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
@@ -61,8 +53,7 @@ keys = [
     Key([mod], "p", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc='powermenu'),
     Key([mod], "t", lazy.spawn("sh -c ~/.config/rofi/scripts/themes"), desc='theme_switcher'),
 
-# C U S T O M
-
+    # C U S T O M
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 1 +5%"), desc='Volume Up'),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 1 -5%"), desc='volume down'),
     Key([], "XF86AudioMute", lazy.spawn("pulsemixer --toggle-mute"), desc='Volume Mute'),
@@ -77,15 +68,10 @@ keys = [
     Key([mod], "e", lazy.to_screen(0)),
 ]
 
-
-
 # █▀▀ █▀█ █▀█ █░█ █▀█ █▀
 # █▄█ █▀▄ █▄█ █▄█ █▀▀ ▄█
 
-
-
 groups = [Group(f"{i+1}", label="󰏃") for i in range(8)]
-
 for i in groups:
     keys.extend(
             [
@@ -173,7 +159,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-		widget.Spacer(length=15,
+                widget.Spacer(length=15,
                     background='#232A2E',
                 ),
 
@@ -508,13 +494,11 @@ floating_layout = layout.Floating(
     ]
 )
 
-
-
-
 from libqtile import hook
 import os
 import subprocess
-# stuff
+
+# startup hook to run qtile startup_once
 @hook.subscribe.startup_once
 def autostart():
     subprocess.call([os.path.expanduser('~/.config/qtile/autostart_once.sh')])
@@ -540,7 +524,4 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
-
-
 # E O F
-

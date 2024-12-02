@@ -10,6 +10,7 @@ return {
     nvim_lsp.zls.setup({})
     nvim_lsp.csharp_ls.setup({})
     nvim_lsp.lemminx.setup({}) -- XML language server
+    nvim_lsp.texlab.setup({})
     nvim_lsp.denols.setup({
       -- on_attach = on_attach,
       root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),

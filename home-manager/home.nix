@@ -24,7 +24,9 @@
   home.packages = with pkgs; [
     inputs.goplaying.packages.${system}.default
 
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    # (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
 
     alsa-utils
     arandr
@@ -55,7 +57,6 @@
     modem-manager-gui
     mutt-wizard
     nautilus
-    # neovim
     nix-index
     nix-prefetch-git
     obs-studio
@@ -70,6 +71,7 @@
     rclone                      # For gdrive mount
     sqlite                      # For neovim TimeTracker
     telegram-desktop
+    texlab
     texliveFull
     thunderbird
     tor-browser-bundle-bin
