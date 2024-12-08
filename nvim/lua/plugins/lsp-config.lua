@@ -1,5 +1,3 @@
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 return {
   'neovim/nvim-lspconfig',
   lazy = true,
@@ -20,7 +18,8 @@ return {
       root_dir = nvim_lsp.util.root_pattern("package.json"),
       single_file_support = false
     })
-    nvim_lsp.lua_ls.setup {
+    nvim_lsp.pyright.setup({})
+    nvim_lsp.lua_ls.setup({
       on_init = function(client)
         if client.workspace_folders then
           local path = client.workspace_folders[1].name
@@ -45,7 +44,7 @@ return {
       settings = {
         Lua = {}
       }
-    }
+    })
   end,
   keys = {
     {'gD', function() vim.lsp.buf.declaration() end, desc = "Goto Declaration"}, -- Where a key is declared
