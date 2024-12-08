@@ -8,8 +8,8 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt-get install pipx git neovim gcc cmake python3 picom rofi dunst \
     python3-full python3-pip unzip zsh wget thunar cava pulseaudio alsa-utils \
-    playerctl kitty tmux ranger fonts-jetbrains-mono brightnessctl sqlite3 bat \
-    xinit imagemagick feh -y
+    playerctl alacritty tmux ranger fonts-jetbrains-mono brightnessctl sqlite3 \
+    bat xinit imagemagick feh -y
 
 # Enable for installing the best nerd font
 
@@ -60,6 +60,6 @@ wal -b 282738 -i ~/.config/xinit/qtile_wallpapers/120_-_KnFPX73.jpg > /dev/null 
 echo "Theme 2 ../done"
 wal -i ~/.config/xinit/qtile_wallpapers/claudio-testa-FrlCwXwbwkk-unsplash.jpg > /dev/null 2>&1
 echo "Theme 3 ../done"
-wal -b 232A2E -i ~/.config/xinit/qtile_wallpapers/fog_forest_2.png > /dev/null 2>&1 
+wal -b 232A2E -i ~/.config/xinit/qtile_wallpapers/fog_forest_2.png > /dev/null 2>&1
 echo "Theme 4 ../done"
 
