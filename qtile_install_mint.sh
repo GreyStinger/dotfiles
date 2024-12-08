@@ -11,19 +11,21 @@ sudo apt-get install pipx git neovim gcc cmake python3 picom rofi dunst \
     playerctl kitty tmux ranger fonts-jetbrains-mono brightnessctl sqlite3 bat \
     xinit imagemagick feh -y
 
-# Save dir
-original_dir=$(pwd)
+# Enable for installing the best nerd font
 
-# Install fonts
-wget -P ~/.local/share/fonts \
-    https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
-cd ~/.local/share/fonts
-unzip JetBrainsMono.zip
-rm JetBrainsMono.zip
-fc-cache -fv
-
-# Reset
-cd "$original_dir"
+# # Save dir
+# original_dir=$(pwd)
+#
+# # Install fonts
+# wget -P ~/.local/share/fonts \
+#     https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
+# cd ~/.local/share/fonts
+# unzip JetBrainsMono.zip
+# rm JetBrainsMono.zip
+# fc-cache -fv
+#
+# # Reset
+# cd "$original_dir"
 
 # Clipster
 
@@ -35,7 +37,7 @@ wget -P ~/.local/bin \
 chmod +x ~/.local/bin/clipster
 
 # Install starship
-curl -sS https://starship.rs/install.sh | sh
+# curl -sS https://starship.rs/install.sh | sh
 
 # pipx env's
 pipx ensurepath

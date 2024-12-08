@@ -16,8 +16,10 @@ in
     enable = true;
 
     settings = {
-      live_config_reload = true;
-      import = [ "~/.config/alacritty/${themeName}.toml" ];
+      general = {
+        live_config_reload = true;
+        import = [ "~/.config/alacritty/${themeName}.toml" ];
+      };
 
       font = {
         size = 11;
