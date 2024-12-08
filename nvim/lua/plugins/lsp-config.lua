@@ -6,6 +6,7 @@ return {
     local nvim_lsp = require('lspconfig')
     nvim_lsp.ccls.setup({})
     nvim_lsp.zls.setup({})
+    nvim_lsp.bashls.setup({})
     nvim_lsp.csharp_ls.setup({})
     nvim_lsp.lemminx.setup({}) -- XML language server
     nvim_lsp.texlab.setup({})

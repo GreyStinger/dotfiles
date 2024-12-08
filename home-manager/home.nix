@@ -31,12 +31,14 @@
     alsa-utils
     arandr
     android-studio
+    bash-language-server
     blueman
     brightnessctl
     calf
     clang
     clipster
     dbeaver-bin
+    dmenu             # for dwm
     easyeffects
     feh
     ffmpegthumbnailer

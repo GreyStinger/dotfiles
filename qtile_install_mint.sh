@@ -31,7 +31,7 @@ install_fonts() {
     # Install fonts
     wget -P ~/.local/share/fonts \
         https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
-    cd ~/.local/share/fonts
+    cd ~/.local/share/fonts || return # WARNING: This could be a source of uncertainty
     unzip JetBrainsMono.zip
     rm JetBrainsMono.zip
 
@@ -39,7 +39,7 @@ install_fonts() {
     fc-cache -fv
 
     # Reset
-    cd "$original_dir"
+    cd "$original_dir" || return # WARNING: This could be a source of uncertainty
     echo "Finished installing fonts"
 }
 
@@ -57,7 +57,7 @@ install_clipster() {
 
     current_shell=$(ps -p $$ -o -cmd=)
     if [[ $current_shell == *"zsh"* ]]; then
-        read -p "Detected zsh shell is in use, add clipster to zsh PATH? [y/N]: " answer
+        read -rp "Detected zsh shell is in use, add clipster to zsh PATH? [y/N]: " answer
         answer=${answer:-N}
         answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
         if [[ "$answer" == "y" || "$answer" == "yes" ]]; then
@@ -71,7 +71,7 @@ install_clipster() {
         else
             echo "Skipped adding ~/.local/bin to zsh path"
         fi
-    else if [[ $current_shell == *"zsh"* ]]; then
+    elif [[ $current_shell == *"zsh"* ]]; then
         read -p "Detected bash shell is in use, add clipster to bash PATH? [y/N]: " answer
         answer=${answer:-N}
         answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
