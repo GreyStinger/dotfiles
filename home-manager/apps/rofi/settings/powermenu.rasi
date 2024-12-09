@@ -10,10 +10,10 @@ configuration {
 \*---------------------------------*/
 * {
     font:                        "JetBrains Mono Nerd Font 11";
-    background:                  #282738;
+    background:                  #D8DEF5;
     background-alt:              #282738;
     foreground:                  #D8DEF5;
-    selected:                    #A491AD;
+    selected:                    #294723;
     active:                      #A893D4;
     urgent:                      #91B1F0;
 }

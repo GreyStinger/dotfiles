@@ -1,8 +1,9 @@
-{ config, username, ... }:
+{ config, pkgs, username, ... }:
 
 {
   services.flameshot = {
     enable = true;
+    package = (pkgs.flameshot.override { enableWlrSupport = true; });
     settings = {
       General = {
         autoCloseIdleDaemon = true;
