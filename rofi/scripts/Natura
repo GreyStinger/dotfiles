@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cp -r ~/.config/cozytile/Natura/. ~/
-wal -i ~/.config/xinit/qtile_wallpapers/claudio-testa-FrlCwXwbwkk-unsplash.jpg
-qtile cmd-obj -o cmd -f restart
-

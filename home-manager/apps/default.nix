@@ -3,12 +3,14 @@
 {
   imports = [
     ./alacritty.nix
+    ./eww.nix
     ./firefox.nix
     ./kitty.nix
     ./mpv.nix
     ./neovim.nix
     ./nixcord.nix
     ./qutebrowser.nix
+    ./rofi.nix
     ./spicetify.nix
     ./yt-dlp.nix
     ./zathura.nix

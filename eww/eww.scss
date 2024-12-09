@@ -1,0 +1,116 @@
+$font: JetBrainsMono Nerd Font;
+$font-weight: 600;
+$font-size: 14px;
+$border-radius: 4px;
+
+$opacity: 0.9;
+
+$pink: rgb(245, 194, 231);
+$mauve: rgb(203, 166, 247);
+$maroon: rgb(235, 160, 172);
+$green: rgb(166, 227, 161);
+$text: rgb(205, 214, 244);
+$subtext1: rgb(186, 194, 222);
+$subtext0: rgb(166, 173, 200);
+$surface2: rgb(88, 91, 112);
+$surface1: rgb(69, 71, 90);
+$surface0: rgb(49, 50, 68);
+$base: rgb(30, 30, 46);
+
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+  font-family: $font;
+}
+
+.bar {
+  margin-bottom: 0;
+  margin:        2px;
+}
+
+.bar-right {
+  border-radius: 6px;
+}
+
+.status-item {
+  margin-right: 6px;
+  margin-left:  6px;
+}
+
+.status-item-label {
+  background-color: #685752;
+  border-radius:    6px;
+  padding-left:     5px;
+  padding:          2px;
+  margin:           0;
+}
+
+.status-item-text {
+  margin: 0;
+}
+
+.time {
+  background-color: rgba($base, $opacity);
+  border-radius:    $border-radius;
+  padding-right:    10px;
+  padding-left:     10px;
+  font-weight:      $font-weight;
+  font-size:        15;
+  color:            $text;
+}
+
+.workspace-container {
+  background-color: rgba($base, $opacity); /* Change this to your desired inactive color */
+  border-radius:    $border-radius;
+  padding-right:    6px;
+  padding-left:     6px;
+}
+
+.workspace {
+  padding-bottom: 4px;
+  margin-right:   5px;
+  padding-top:    3px;
+  margin-left:    5px;
+  font-size:      $font-size;
+  label {
+    padding: 0;
+    margin: 0;
+    font-weight: $font-weight;
+    color: $pink;
+  }
+  box {
+    padding: 0;
+    margin: 0;
+    min-width: 18px;
+  }
+}
+
+.active-windows {
+  label {
+    color: $subtext0;
+  }
+  box {
+    background-color: $surface2;
+  }
+}
+
+.active-workspace {
+  label {
+    font-weight: 700;
+    color: $mauve;
+  }
+  box {
+    padding: 0;
+    margin: 0;
+    background-color: $mauve;
+  }
+}
+
+.active-workspace.no-windows {
+  label {
+    color: $green;
+  }
+  box {
+    background-color: transparent;
+  }
+}
+

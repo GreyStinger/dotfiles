@@ -9,6 +9,7 @@
     };
     nur.url = "github:nix-community/NUR";
     nix-colors.url = "github:misterio77/nix-colors";
+    hyprcursor-phinger.url = "github:Jappie3/hyprcursor-phinger";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

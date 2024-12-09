@@ -16,6 +16,38 @@ in
     enable = true;
     package = pkgs.firefox-bin;
     profiles.${config.home.username} = {
+      userChrome = ''
+        /* hides the native tabs */
+        #TabsToolbar {
+          visibility: collapse !important;
+        }
+        /* hides the title bar */
+        /* #titlebar {
+          visibility: collapse;
+        } */
+        /* hides the sidebar */
+        /* #sidebar-header {
+          visibility: collapse !important;
+        } */
+        /* leaves space for the window buttons */
+        /* #nav-bar {
+          margin-top: -8px;
+          margin-right: 74px;
+          margin-bottom: -4px;
+        } */
+        /* Hide tab bar in FF Quantum
+        @-moz-document url(chrome://browser/content/browser.xul), url(chrome://browser/content/browser.xhtml) {
+          #TabsToolbar {
+            visibility: collapse !important;
+            margin-bottom: 21px !important;
+          }
+
+          #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+            visibility: collapse !important;
+          }
+        }
+        */
+      '';
       extensions = [
         addons.ublock-origin
         addons.sponsorblock
@@ -25,6 +57,7 @@ in
         addons.firefox-color
         addons.bionic-reader
         addons.w2g
+        addons.tree-style-tab
       ];
     };
     policies = {
@@ -44,6 +77,7 @@ in
       DisplayBookmarksToolbar = "newtab"; # "always", "never" or "newtab"
       DisplayMenuBar = "default-off"; # "always", "never", "default-off" or "default-on"
       SearchBar = "separate"; # "separate" or "unified"
+
 
       Preferences = {
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
@@ -66,6 +100,7 @@ in
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
         "privacy.resistFingerprinting" = lock-true;
         "privacy.trackingProtection.enabled" = lock-true;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = lock-true;
         "network.cookie.cookieBehavior" = 1; # Block third-party cookies
         "network.http.referer.XOriginPolicy" = 2;
         "network.http.referer.XOriginTrimmingPolicy" = 2;

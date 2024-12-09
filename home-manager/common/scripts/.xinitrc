@@ -2,5 +2,5 @@
 
 bash ~/.xprofile
 
-exec dwm
+exec Hyprland
 
