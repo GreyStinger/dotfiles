@@ -7,7 +7,7 @@
     sourceFirst = true;
     settings = {
       "$mod" = "SUPER";
-      "$term" = "alacritty";
+      "$term" = "kitty";
 
       monitor = ",preffered,auto,auto";
 
@@ -27,6 +27,10 @@
         border_size = 2;
       };
 
+      windowrulev2 = [
+        "noanim, class:^(flameshot)$"
+      ];
+
       input = {
         follow_mouse = 1;
         force_no_accel = 1;
@@ -40,14 +44,16 @@
         # Launch Keys
         "$mod, Return, exec, $term"
         "$mod, R, exec, sh -c ~/.config/rofi/scripts/launcher"
-        "$mod, P, exec, sh -c ~/.config/rofi/scripts/power"
+        "$mod SHIFT, P, exec, sh -c ~/.config/rofi/scripts/power"
+        ", Print, exec, flameshot gui"
 
         # Window Management
         "$mod, Q, killactive"
         "$mod SHIFT, Q, exit"
         "$mod SHIFT, R, exec, hyprctl reload"
         "$mod, T, togglefloating"
-        "$mod, F, fullscreen"
+        "$mod, Z, fullscreen, 1"
+        "$mod, F, fullscreen, 0"
         "$mod, P, pseudo"
 
         # Focus Windows

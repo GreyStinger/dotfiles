@@ -10,12 +10,12 @@
   (box
     :class "bar"
     (centerbox
-    :class "bar-centerbox"
-    (left)
-    (box :class "time"
-      :valign "start"
-      (button time))
-    (right))) )
+      :class "bar-centerbox"
+      (left)
+      (box :class "time"
+        :valign "fill"
+        (button time))
+      (right))) )
 
 
 (defwidget left []
@@ -27,9 +27,9 @@
   (workspaces)))
 
 ;; Right part of the bar
-(defwidget status-item [label content ?onclick]
+(defwidget status-item [label content ?cls ?onclick]
   (box
-    :class "status-item"
+    :class "${cls} status-item"
     :orientation "h"
     :spacing 8
     :space-evenly false
@@ -45,9 +45,18 @@
     :space-evenly false
     :vexpand true
     :hexpand true
-  (status-item :label " " :content {round(EWW_CPU.avg, 2)+"%"} :onclick "")
-  (status-item :label " " :content mem :onclick "")
-  (status-item :label "󱈏" :content {EWW_BATTERY.BAT0.capacity+"%"} :onclick "")))
+  (status-item :label ""
+      :cls "start-item cpu-label"
+      :content {round(EWW_CPU.avg, 2)+"%"}
+      :onclick "")
+  (status-item :label ""
+      :cls "ram-label"
+      :content mem
+      :onclick "")
+  (status-item :label "󱈏"
+      :cls "bat-label"
+      :content {EWW_BATTERY.BAT0.capacity+"%"}
+      :onclick "")))
 
 (defwidget workspace-item [text cls]
   (box :orientation "v"

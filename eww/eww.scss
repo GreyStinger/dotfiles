@@ -3,13 +3,16 @@ $font-weight: 600;
 $font-size: 14px;
 $border-radius: 4px;
 
-$opacity: 0.9;
+$opacity: 0.95;
 
 $pink: rgb(245, 194, 231);
 $mauve: rgb(203, 166, 247);
 $maroon: rgb(235, 160, 172);
+$peach: rgb(250, 179, 135);
+$yellow: rgb(249, 226, 175);
 $green: rgb(166, 227, 161);
 $teal: rgb(148, 226, 213);
+$sapphire: rgb(116, 199, 236);
 $text: rgb(205, 214, 244);
 $subtext1: rgb(186, 194, 222);
 $subtext0: rgb(166, 173, 200);
@@ -20,38 +23,69 @@ $base: rgb(30, 30, 46);
 $mantle: rgb(24, 24, 37);
 
 * {
-  all: unset; //Unsets everything so you can style everything from scratch
-  // font-family: $font;
+  all: unset;
 }
 
 .bar {
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
   margin-bottom: 0;
-  margin:        2px;
 }
 
 .bar-centerbox {
-  border-radius: $border-radius
+  border-radius: $border-radius;
+  background-color: rgba($base, $opacity);
 }
 
 .bar-right {
   color:            $text;
-  background-color: rgba($base, $opacity);
   border-radius:    $border-radius;
   padding-right:    6px;
-  padding-left:     6px;
   font-family:      $font-family;
 }
 
 .status-item {
   margin-right: 6px;
   margin-left:  6px;
+  button {
+    background-color: $mantle;
+    padding-left: 6px;
+    padding-right: 12px;
+  }
+}
+
+.start-item.status-item {
+  margin-left: 0;
+  button {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
 }
 
 .status-item-label {
-  border-radius:    6px;
+  // border-radius:    6px;
   padding-left:     5px;
   padding:          2px;
   margin:           0;
+}
+
+.cpu-label {
+  button {
+    color: $yellow;
+  }
+}
+
+.ram-label {
+  button {
+    color: $peach;
+  }
+}
+
+.bat-label {
+  button {
+    color: $mauve;
+  }
 }
 
 .status-item-text {
@@ -59,11 +93,11 @@ $mantle: rgb(24, 24, 37);
 }
 
 .time {
-  background-color: rgba($base, $opacity);
   border-radius:    $border-radius;
-  padding:          3px;
   padding-right:    10px;
   padding-left:     10px;
+  margin-top:       4px;
+  margin-bottom:    4px;
   font-weight:      $font-weight;
   font-family:      FiraCode Nerd Font;
   font-size:        15;
@@ -71,7 +105,6 @@ $mantle: rgb(24, 24, 37);
 }
 
 .workspace-container {
-  background-color: rgba($base, $opacity); /* Change this to your desired inactive color */
   border-radius:    $border-radius;
   padding-right:    6px;
   padding-left:     6px;
@@ -80,9 +113,9 @@ $mantle: rgb(24, 24, 37);
 
 .workspace {
   padding-bottom: 4px;
-  margin-right:   5px;
+  padding-right:   5px;
+  padding-left:    5px;
   padding-top:    3px;
-  margin-left:    5px;
   font-size:      $font-size;
   label {
     padding: 0;
@@ -107,6 +140,7 @@ $mantle: rgb(24, 24, 37);
 }
 
 .active-workspace {
+  background-color: $mantle;
   label {
     font-weight: 700;
     color: $mauve;
