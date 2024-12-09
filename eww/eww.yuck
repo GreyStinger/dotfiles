@@ -7,18 +7,22 @@
 (deflisten workspace "scripts/track_workspaces.sh")
 
 (defwidget bar []
-  (centerbox
+  (box
+    :class "bar"
+    (centerbox
+    :class "bar-centerbox"
     (left)
     (box :class "time"
+      :valign "start"
       (button time))
-    (right)))
+    (right))) )
 
 
 (defwidget left []
   (box :orientation "h"
     :space-evenly true
     :halign "start"
-    :valign "center"
+    :valign "fill"
     :class "workspace-container"
   (workspaces)))
 
@@ -36,11 +40,14 @@
 (defwidget right []
   (box :orientation "h"
     :halign "end"
-    :valign "center"
+    :valign "fill"
     :class "bar-right"
     :space-evenly false
-  (status-item :label " " :content "cpu" :onclick "") ; todo: add onclicks
-  (status-item :label " " :content mem :onclick "")))
+    :vexpand true
+    :hexpand true
+  (status-item :label " " :content {round(EWW_CPU.avg, 2)+"%"} :onclick "")
+  (status-item :label " " :content mem :onclick "")
+  (status-item :label "󱈏" :content {EWW_BATTERY.BAT0.capacity+"%"} :onclick "")))
 
 (defwidget workspace-item [text cls]
   (box :orientation "v"
@@ -56,7 +63,6 @@
 (defwindow bar
   :exclusive true
   :monitor 0
-  :class "bar"
   :windowtype "dock"
   :stacking "bg"
   :focusable false

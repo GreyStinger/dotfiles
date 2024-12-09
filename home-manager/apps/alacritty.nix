@@ -45,7 +45,7 @@ in
       window = {
         decorations = "full";
         dynamic_title = true;
-        opacity = 1;
+        opacity = 0.9;
         startup_mode = "Windowed";
       };
 
