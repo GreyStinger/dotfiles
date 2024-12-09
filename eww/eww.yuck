@@ -1,0 +1,69 @@
+(defpoll time :interval "1s"
+  "date '+%H:%M:%S %b %d, %Y'")
+
+(defpoll mem :interval "1s"
+  "scripts/get_ram_usage.sh")
+
+(deflisten workspace "scripts/track_workspaces.sh")
+
+(defwidget bar []
+  (centerbox
+    (left)
+    (box :class "time"
+      (button time))
+    (right)))
+
+
+(defwidget left []
+  (box :orientation "h"
+    :space-evenly true
+    :halign "start"
+    :valign "center"
+    :class "workspace-container"
+  (workspaces)))
+
+;; Right part of the bar
+(defwidget status-item [label content ?onclick]
+  (box
+    :class "status-item"
+    :orientation "h"
+    :spacing 8
+    :space-evenly false
+    (button :onclick onclick :class "status-item-label" label)
+    (label :class "status-item-text" :text content))
+)
+
+(defwidget right []
+  (box :orientation "h"
+    :halign "end"
+    :valign "center"
+    :class "bar-right"
+    :space-evenly false
+  (status-item :label " " :content "cpu" :onclick "") ; todo: add onclicks
+  (status-item :label " " :content mem :onclick "")))
+
+(defwidget workspace-item [text cls]
+  (box :orientation "v"
+    :space-evenly false
+    :class cls
+    :spacing 0
+  (label :text text)
+  (box :height 2)))
+
+(defwidget workspaces []
+  (literal :content workspace))
+
+(defwindow bar
+  :exclusive true
+  :monitor 0
+  :class "bar"
+  :windowtype "dock"
+  :stacking "bg"
+  :focusable false
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "26px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar))

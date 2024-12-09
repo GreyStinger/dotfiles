@@ -5,8 +5,10 @@
     nix-colors.homeManagerModules.default
     inputs.nixcord.homeManagerModules.nixcord
     inputs.spicetify-nix.homeManagerModules.default
+    inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
     ./system/apollo.nix
     ./common
+    ./windowmanagers
     ./git
     ./apps
     ./services
@@ -21,8 +23,15 @@
 
   fonts.fontconfig.enable = true;
 
+  programs.hyprcursor-phinger.enable = true;
+
+  # Pywal temp until I get hellwal working on nix
+  programs.pywal.enable = true;
+
   home.packages = with pkgs; [
     inputs.goplaying.packages.${system}.default
+
+    eww
 
     # (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     nerd-fonts.jetbrains-mono
@@ -36,7 +45,7 @@
     brightnessctl
     calf
     clang
-    clipster
+    cliphist          # clipboard stuff
     dbeaver-bin
     dmenu             # for dwm
     easyeffects
@@ -52,6 +61,7 @@
     imagemagick
     inetutils
     insomnia
+    jq                # for eww with hyprland
     keepassxc
     kleopatra
     krita
@@ -72,6 +82,7 @@
     qbittorrent
     rclone                      # For gdrive mount
     sqlite                      # For neovim TimeTracker
+    socat                       # For hyprland eww workspace tracking
     telegram-desktop
     texlab
     texliveFull
@@ -83,6 +94,8 @@
     virt-manager
     vlc
     wacomtablet
+    waypaper
+    wl-clipboard                # Clipboard manager for wayland
     xdotool
     zoom-us
   ];
