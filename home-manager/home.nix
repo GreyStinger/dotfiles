@@ -43,6 +43,7 @@
     bash-language-server
     blueman
     brightnessctl
+    busybox           # For cpu usage in eww
     calf
     clang
     cliphist          # clipboard stuff
@@ -66,7 +67,7 @@
     kleopatra
     krita
     lua-language-server
-    modem-manager-gui
+    # modem-manager-gui
     mutt-wizard
     nautilus
     nix-index

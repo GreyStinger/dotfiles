@@ -1,4 +1,4 @@
-$font: JetBrainsMono Nerd Font;
+$font-family: JetBrainsMono Nerd Font;
 $font-weight: 600;
 $font-size: 14px;
 $border-radius: 4px;
@@ -9,6 +9,7 @@ $pink: rgb(245, 194, 231);
 $mauve: rgb(203, 166, 247);
 $maroon: rgb(235, 160, 172);
 $green: rgb(166, 227, 161);
+$teal: rgb(148, 226, 213);
 $text: rgb(205, 214, 244);
 $subtext1: rgb(186, 194, 222);
 $subtext0: rgb(166, 173, 200);
@@ -16,10 +17,11 @@ $surface2: rgb(88, 91, 112);
 $surface1: rgb(69, 71, 90);
 $surface0: rgb(49, 50, 68);
 $base: rgb(30, 30, 46);
+$mantle: rgb(24, 24, 37);
 
 * {
   all: unset; //Unsets everything so you can style everything from scratch
-  font-family: $font;
+  // font-family: $font;
 }
 
 .bar {
@@ -27,8 +29,17 @@ $base: rgb(30, 30, 46);
   margin:        2px;
 }
 
+.bar-centerbox {
+  border-radius: $border-radius
+}
+
 .bar-right {
-  border-radius: 6px;
+  color:            $text;
+  background-color: rgba($base, $opacity);
+  border-radius:    $border-radius;
+  padding-right:    6px;
+  padding-left:     6px;
+  font-family:      $font-family;
 }
 
 .status-item {
@@ -37,7 +48,6 @@ $base: rgb(30, 30, 46);
 }
 
 .status-item-label {
-  background-color: #685752;
   border-radius:    6px;
   padding-left:     5px;
   padding:          2px;
@@ -51,9 +61,11 @@ $base: rgb(30, 30, 46);
 .time {
   background-color: rgba($base, $opacity);
   border-radius:    $border-radius;
+  padding:          3px;
   padding-right:    10px;
   padding-left:     10px;
   font-weight:      $font-weight;
+  font-family:      FiraCode Nerd Font;
   font-size:        15;
   color:            $text;
 }
@@ -63,6 +75,7 @@ $base: rgb(30, 30, 46);
   border-radius:    $border-radius;
   padding-right:    6px;
   padding-left:     6px;
+  font-family:      $font-family;
 }
 
 .workspace {
