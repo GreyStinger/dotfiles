@@ -12,6 +12,7 @@
     ./qutebrowser.nix
     ./rofi.nix
     ./spicetify.nix
+    ./vesktop.nix
     ./yt-dlp.nix
     ./zathura.nix
   ];

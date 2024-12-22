@@ -46,7 +46,7 @@
     :vexpand true
     :hexpand true
   (status-item :label ""
-      :cls "start-item cpu-label"
+      :cls "cpu-label"
       :content {round(EWW_CPU.avg, 2)+"%"}
       :onclick "")
   (status-item :label ""

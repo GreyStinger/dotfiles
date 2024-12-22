@@ -44,6 +44,7 @@
     blueman
     brightnessctl
     busybox           # For cpu usage in eww
+    caligula          # Really good dd cli tool
     calf
     clang
     cliphist          # clipboard stuff
