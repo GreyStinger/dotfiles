@@ -2,7 +2,18 @@ return {
   "pmizio/typescript-tools.nvim",
   lazy = true,
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  config = true,
-  ft = { "typescript", "typescriptreact" }, -- This line ensures the plugin only loads for TypeScript files
+  opts = {
+    settings = {
+      code_lens = "all",
+      disable_member_code_lens = false,
+      jsx_close_tag = {
+        enable = false,
+        filetypes = { "javascriptreact", "typescriptreact" },
+      }
+    }
+  },
+  -- config = function(opts)
+  --   require('typ')
+  -- end,
+  ft = { "typescript", "typescriptreact" },
 }
-

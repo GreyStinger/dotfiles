@@ -8,18 +8,13 @@ return {
     nvim_lsp.zls.setup({})
     nvim_lsp.bashls.setup({})
     nvim_lsp.csharp_ls.setup({})
-    nvim_lsp.lemminx.setup({}) -- XML language server
+    nvim_lsp.lemminx.setup({})
     nvim_lsp.texlab.setup({})
+    nvim_lsp.svelte.setup({})
+    nvim_lsp.pyright.setup({})
     nvim_lsp.denols.setup({
-      -- on_attach = on_attach,
       root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
     })
-    nvim_lsp.ts_ls.setup({
-      -- on_attach = on_attach,
-      root_dir = nvim_lsp.util.root_pattern("package.json"),
-      single_file_support = false
-    })
-    nvim_lsp.pyright.setup({})
     nvim_lsp.lua_ls.setup({
       on_init = function(client)
         if client.workspace_folders then
