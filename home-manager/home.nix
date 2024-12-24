@@ -57,6 +57,7 @@
     gimp
     glib.dev
     gnumake
+    gnupg
     godot_4
     hamster
     heroic

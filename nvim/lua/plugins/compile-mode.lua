@@ -1,5 +1,7 @@
 return {
   "ej-shafran/compile-mode.nvim",
+  lazy = true,
+  event = "VeryLazy",
   branch = "latest",
   dependencies = {
     "nvim-lua/plenary.nvim",
