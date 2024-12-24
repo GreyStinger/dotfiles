@@ -19,6 +19,10 @@
         enabled = true;
       };
     };
+    signing  = {
+      key = "FAFB11080EBC12BB";
+      signByDefault = true;
+    };
     ignores = [
       ".direnv/"
       "result"

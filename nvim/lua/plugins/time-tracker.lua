@@ -6,7 +6,7 @@ return {
   },
   event = "VeryLazy",
   opts = {
-    data_file = vim.fn.expand("$HOME/data/time-tracker.db")
+    data_file = vim.fn.expand("$HOME/time-tracker.db")
   },
 }
 
