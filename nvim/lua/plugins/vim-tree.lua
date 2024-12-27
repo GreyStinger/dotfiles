@@ -30,10 +30,12 @@ return {
         }
       },
       filters = {
-        custom = {".DS_Store"}
+        custom = {".DS_Store"},
+        git_ignored = false,
       },
       git = {
-        ignore = false
+        enable = true,
+        timeout = 1000
       }
     })
     vim.g.loaded_netrw = 1
