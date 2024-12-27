@@ -81,6 +81,10 @@
     pavucontrol
     pfetch
     picom                       # TODO Migrate to services .nix
+    podman
+    podman-compose
+    podman-desktop
+    podman-tui
     python312Packages.pygments  # For texlive
     qbittorrent
     rclone                      # For gdrive mount
