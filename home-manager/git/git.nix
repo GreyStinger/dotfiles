@@ -3,9 +3,19 @@
 {
   programs.git = {
     enable = true;
-    userName = "GreyStinger";
+    userName = "Jayden Andrews";
     userEmail = "jaydenandrews010@gmail.com";
     extraConfig = {
+      merge = {
+        tool = "diffview";
+      };
+      mergetool = {
+        prompt = false;
+        keepBackup = false;
+      };
+      "mergetool \"diffview\"" = {
+        cmd = "nvim -n -c \"DiffviewOpen\" \"$MERGE\"";
+      };
       init.defaultBranch = "master";
       core = {
         editor = "nvim";

@@ -1,5 +1,8 @@
-{ config , inputs , nix-colors , username , pkgs , ... }:
+{ config , inputs , nix-colors , username , pkgs, system, ... }:
 
+let
+  goplaying = inputs.goplaying.packages.${system}.goplaying;
+in
 {
   imports = [
     nix-colors.homeManagerModules.default
@@ -29,11 +32,10 @@
   programs.pywal.enable = true;
 
   home.packages = with pkgs; [
-    inputs.goplaying.packages.${system}.default
+    goplaying
 
     eww
 
-    # (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
 
@@ -60,7 +62,6 @@
     gnupg
     godot_4
     hamster
-    heroic
     imagemagick
     inetutils
     insomnia

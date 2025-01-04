@@ -1,47 +1,43 @@
+-- Need to set LUA_LS_PATH to path of the lua-language-server
+
 return {
   'neovim/nvim-lspconfig',
   lazy = true,
   event = "BufReadPre",
-  config = function()
+  config = function(_, opts)
     local nvim_lsp = require('lspconfig')
-    nvim_lsp.ccls.setup({})
-    nvim_lsp.zls.setup({})
-    nvim_lsp.bashls.setup({})
-    nvim_lsp.csharp_ls.setup({})
-    nvim_lsp.lemminx.setup({})
-    nvim_lsp.texlab.setup({})
-    nvim_lsp.svelte.setup({})
-    nvim_lsp.pyright.setup({})
-    nvim_lsp.denols.setup({
-      root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-    })
-    nvim_lsp.lua_ls.setup({
-      on_init = function(client)
-        if client.workspace_folders then
-          local path = client.workspace_folders[1].name
-          if vim.uv.fs_stat(path..'/.luarc.json') or vim.uv.fs_stat(path..'/.luarc.jsonc') then
-            return
-          end
-        end
-
-        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-          runtime = {
-            version = 'LuaJIT'
-          },
-          -- Make the server aware of Neovim runtime files
-          workspace = {
-            checkThirdParty = false,
-            library = {
-              vim.env.VIMRUNTIME
-            }
-          }
-        })
-      end,
-      settings = {
-        Lua = {}
-      }
-    })
+    for server, config in pairs(opts.servers) do
+      nvim_lsp[server].setup(config)
+    end
   end,
+
+  ---@class PluginLspOpts
+  opts = {
+    servers = {
+      ccls = {},
+      zls = {},
+      bashls = {},
+      csharp_ls = {},
+      lemminx = {},
+      texlab = {},
+      svelte = {},
+      pyright = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = {"vim"},
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+              checkThirdParty = false,
+            },
+          },
+        },
+      }
+    },
+    inlay_hints = { enabled = true },
+  },
   keys = {
     {'gD', function() vim.lsp.buf.declaration() end, desc = "Goto Declaration"}, -- Where a key is declared
     {'gd', function() vim.lsp.buf.definition() end, desc = "Goto Definition"}, -- Where a value for a key is defined

@@ -18,6 +18,8 @@ return {
       ensure_installed = {
         "bash",
         "c",
+        "css",
+        "scss",
         "diff",
         "html",
         "javascript",

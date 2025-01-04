@@ -22,7 +22,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nur, nix-colors, goplaying, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, nur, nix-colors, ... }:
     let
       system = "x86_64-linux";
       username = "jayden";
@@ -37,7 +37,7 @@
         ];
 
         extraSpecialArgs = {
-          inherit nurPkgs inputs nix-colors username;
+          inherit nurPkgs inputs system nix-colors username;
         };
       };
     };

@@ -5,6 +5,7 @@
     ./alacritty.nix
     ./eww.nix
     ./firefox.nix
+    ./ghostty.nix
     ./kitty.nix
     ./mpv.nix
     ./neovim.nix

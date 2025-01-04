@@ -50,7 +50,7 @@ return {
 
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'orgmode' },
+        { name = "lazydev", group_index = 0 },
         { name = 'luasnip' },
       }, {
         { name = 'buffer' },
