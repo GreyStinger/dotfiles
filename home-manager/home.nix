@@ -45,6 +45,7 @@ in
     bash-language-server
     blueman
     brightnessctl
+    bottles
     busybox           # For cpu usage in eww
     caligula          # Really good dd cli tool
     calf
@@ -86,6 +87,7 @@ in
     podman-compose
     podman-desktop
     podman-tui
+    postgresql.dev              # For python psycopg2
     python312Packages.pygments  # For texlive
     qbittorrent
     rclone                      # For gdrive mount

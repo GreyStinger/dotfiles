@@ -1,10 +1,12 @@
-{ ... }:
+{ home, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
     systemd.variables = [ "--all" ];
     enable = true;
+    # xwayland.enable = false;
     sourceFirst = true;
+    package = pkgs.hyprland;
     settings = {
       "$mod" = "SUPER";
       "$term" = "kitty";
