@@ -110,6 +110,10 @@
 
       # Blog
       {
+        url = "https://www.krooxworld.com/rss";
+        tags = [ "Blog" ];
+      }
+      {
         url = "https://moskas.github.io/feed";
         tags = [ "Blog" ];
       }

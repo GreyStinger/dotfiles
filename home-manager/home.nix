@@ -2,6 +2,9 @@
 
 let
   goplaying = inputs.goplaying.packages.${system}.goplaying;
+
+  androidEnv = pkgs.androidenv.override { licenseAccepted = true; };
+  androidSdk = androidEnv.androidPkgs.androidsdk;
 in
 {
   imports = [
@@ -40,6 +43,7 @@ in
     nerd-fonts.fira-code
 
     alsa-utils
+    # androidSdk
     arandr
     android-studio
     bash-language-server
@@ -52,9 +56,11 @@ in
     clang
     cliphist          # clipboard stuff
     dbeaver-bin
+
     dmenu             # for dwm
     easyeffects
     feh
+    flutter
     ffmpegthumbnailer
     filezilla
     gimp
@@ -66,6 +72,8 @@ in
     imagemagick
     inetutils
     insomnia
+    jellyfin-media-player
+    jdk17
     jq                # for eww with hyprland
     keepassxc
     kleopatra
@@ -114,6 +122,7 @@ in
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
+      android-sdk.accept_license = true;
     };
   };
 
