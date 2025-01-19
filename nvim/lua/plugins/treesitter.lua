@@ -13,9 +13,12 @@ return {
       { "<bs>", desc = "Decrement Selection", mode = "x" },
     },
     opts = {
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+      },
       indent = { enable = true },
       ensure_installed = {
+        "astro",
         "bash",
         "c",
         "css",

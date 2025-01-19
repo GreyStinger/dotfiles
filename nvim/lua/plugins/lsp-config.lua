@@ -14,6 +14,7 @@ return {
   ---@class PluginLspOpts
   opts = {
     servers = {
+      astro = {},
       ccls = {},
       zls = {},
       bashls = {},

@@ -2,9 +2,6 @@
 
 let
   goplaying = inputs.goplaying.packages.${system}.goplaying;
-
-  androidEnv = pkgs.androidenv.override { licenseAccepted = true; };
-  androidSdk = androidEnv.androidPkgs.androidsdk;
 in
 {
   imports = [
@@ -43,9 +40,7 @@ in
     nerd-fonts.fira-code
 
     alsa-utils
-    # androidSdk
     arandr
-    android-studio
     bash-language-server
     blueman
     brightnessctl

@@ -5,6 +5,7 @@ return {
   opts = {
     settings = {
       code_lens = "all",
+      tsserver_logs = "verbose",
       disable_member_code_lens = false,
       jsx_close_tag = {
         enable = false,
