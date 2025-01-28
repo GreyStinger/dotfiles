@@ -9,17 +9,15 @@
     };
     nur.url = "github:nix-community/NUR";
     nix-colors.url = "github:misterio77/nix-colors";
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     hyprcursor-phinger.url = "github:Jappie3/hyprcursor-phinger";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-    };
-    goplaying = {
-      url = "github:justinmdickey/goplaying";
-    };
+    nixcord = { url = "github:kaylorben/nixcord"; };
+    goplaying = { url = "github:justinmdickey/goplaying"; };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nur, nix-colors, ... }:
@@ -32,9 +30,7 @@
       homeConfigurations."jayden" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [
-          ./home.nix
-        ];
+        modules = [ ./home.nix ];
 
         extraSpecialArgs = {
           inherit nurPkgs inputs system nix-colors username;

@@ -1,11 +1,12 @@
-{...}:
+{ ... }:
 
 {
   programs.starship = {
     enable = true;
     settings = {
       add_newline = false;
-      format = "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+      format =
+        "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
       shell = {
         disabled = false;
         format = "$indicator";
@@ -37,12 +38,8 @@
         format = "[$hash]($style) ";
         style = "bright-yellow bold";
       };
-      git_state = {
-        style = "bright-purple bold";
-      };
-      git_status = {
-        style = "bright-green bold";
-      };
+      git_state = { style = "bright-purple bold"; };
+      git_status = { style = "bright-green bold"; };
       directory = {
         read_only = " ";
         truncation_length = 0;
@@ -51,9 +48,7 @@
         format = "[$duration]($style) ";
         style = "bright-blue";
       };
-      jobs = {
-        style = "bright-green bold";
-      };
+      jobs = { style = "bright-green bold"; };
       character = {
         success_symbol = "[\\$](bright-green bold)";
         error_symbol = "[\\$](bright-red bold)";

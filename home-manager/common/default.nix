@@ -1,9 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./dconf.nix
-    ./gdb.nix
-    ./xinit.nix
-  ];
+  imports = [ ./dconf.nix ./gdb.nix ./xinit.nix ];
 }

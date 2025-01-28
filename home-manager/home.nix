@@ -1,9 +1,9 @@
-{ config , inputs , nix-colors , username , pkgs, system, ... }:
+{ config, inputs, nix-colors, username, pkgs, system, ... }:
 
 let
   goplaying = inputs.goplaying.packages.${system}.goplaying;
-in
-{
+  zen-browser = inputs.zen-browser.packages.${system}.default;
+in {
   imports = [
     nix-colors.homeManagerModules.default
     inputs.nixcord.homeManagerModules.nixcord
@@ -33,6 +33,7 @@ in
 
   home.packages = with pkgs; [
     goplaying
+    zen-browser
 
     eww
 
@@ -45,14 +46,14 @@ in
     blueman
     brightnessctl
     bottles
-    busybox           # For cpu usage in eww
-    caligula          # Really good dd cli tool
+    busybox # For cpu usage in eww
+    caligula # Really good dd cli tool
     calf
     clang
-    cliphist          # clipboard stuff
+    cliphist # clipboard stuff
     dbeaver-bin
 
-    dmenu             # for dwm
+    dmenu # for dwm
     easyeffects
     feh
     flutter
@@ -64,17 +65,17 @@ in
     gnupg
     godot_4
     hamster
+    heroic
     imagemagick
     inetutils
     insomnia
     jellyfin-media-player
     jdk17
-    jq                # for eww with hyprland
+    jq # for eww with hyprland
     keepassxc
     kleopatra
     krita
     lua-language-server
-    # modem-manager-gui
     mutt-wizard
     nautilus
     nix-index
@@ -85,30 +86,31 @@ in
     pass
     pavucontrol
     pfetch
-    picom                       # TODO Migrate to services .nix
+    picom # TODO Migrate to services .nix
     podman
     podman-compose
     podman-desktop
     podman-tui
-    postgresql.dev              # For python psycopg2
-    python312Packages.pygments  # For texlive
+    postgresql.dev # For python psycopg2
+    python312Packages.pygments # For texlive
     qbittorrent
-    rclone                      # For gdrive mount
-    sqlite                      # For neovim TimeTracker
-    socat                       # For hyprland eww workspace tracking
+    rclone # For gdrive mount
+    sqlite # For neovim TimeTracker
+    socat # For hyprland eww workspace tracking
+    teams-for-linux
     telegram-desktop
     texlab
     texliveFull
     thunderbird
     tor-browser-bundle-bin
     ripgrep
-    ueberzugpp                  # ranger preview
+    ueberzugpp # ranger preview
     upower
     virt-manager
     vlc
     wacomtablet
     waypaper
-    wl-clipboard                # Clipboard manager for wayland
+    wl-clipboard # Clipboard manager for wayland
     xdotool
     zoom-us
   ];
@@ -121,11 +123,12 @@ in
     };
   };
 
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
   };
 
   home.sessionVariables = {

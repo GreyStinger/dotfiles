@@ -2,15 +2,15 @@
 
 {
   programs.tmux = {
-    enable           = true;
-    mouse            = true;
-    terminal         = "tmux-256color";
-    escapeTime       = 10;
-    historyLimit     = 8000;
-    keyMode          = "emacs";
-    prefix           = "M-u";
+    enable = true;
+    mouse = true;
+    terminal = "tmux-256color";
+    escapeTime = 10;
+    historyLimit = 8000;
+    keyMode = "emacs";
+    prefix = "M-u";
     aggressiveResize = true;
-    extraConfig      = ''
+    extraConfig = ''
       # Status
       set -g status-interval 1
 
@@ -66,10 +66,10 @@
       # reload config file
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "~/.config/tmux/tmux.conf reloaded"
     '';
-    plugins          = with pkgs.tmuxPlugins; [
+    plugins = with pkgs.tmuxPlugins; [
       resurrect
       {
-        plugin      = catppuccin;
+        plugin = catppuccin;
         extraConfig = ''
           # Config
 

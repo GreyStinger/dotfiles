@@ -11,7 +11,10 @@
       "$mod" = "SUPER";
       "$term" = "kitty";
 
-      monitor = ",preffered,auto,auto";
+      monitor = [
+        "eDP-1, 1366x768@60, 0x0, 1"
+        "HDMI-A-1, 1920x1080@75, -1920x0, 1"
+      ];
 
       exec-once = [
         "eww daemon"
@@ -19,9 +22,7 @@
         "eww open bar"
       ];
 
-      source = [
-        "~/.config/hypr/temp.conf"
-      ];
+      source = [ "~/.config/hypr/temp.conf" ];
 
       general = {
         gaps_in = 4;
@@ -29,16 +30,12 @@
         border_size = 2;
       };
 
-      windowrulev2 = [
-        "noanim, class:^(flameshot)$"
-      ];
+      windowrulev2 = [ "noanim, class:^(flameshot)$" ];
 
       input = {
         follow_mouse = 1;
         force_no_accel = 1;
-        touchpad = {
-          natural_scroll = true;
-        };
+        touchpad = { natural_scroll = true; };
       };
 
       # Keyboard Bindings
@@ -130,10 +127,7 @@
       };
 
       # Mouse Bindings
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-      ];
+      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
     };
   };
 }

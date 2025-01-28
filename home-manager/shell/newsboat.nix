@@ -58,39 +58,49 @@
       { url = ''"query:Youtube:tags # \"Youtube\""''; }
       { url = ''"query:Odysee:tags # \"Odysee\""''; }
       { url = ''"query:Blog:tags # \"Blog\""''; }
-      { url = ''"query:News:tags # \"News\""''; }
+      {
+        url = ''"query:News:tags # \"News\""'';
+      }
       # { url = "http://localhost:8000/feed"; } # Personal feed check for later
 
-      { url = "https://distrowatch.com/news/dw.xml"; title = "Distro Watch"; }
-      { url = "http://fitgirl-repacks.site/feed/"; title = "Fitgirl Repacks"; }
+      {
+        url = "https://distrowatch.com/news/dw.xml";
+        title = "Distro Watch";
+      }
+      {
+        url = "http://fitgirl-repacks.site/feed/";
+        title = "Fitgirl Repacks";
+      }
 
       #Videos
       ##Youtube
       {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCMiyV_Ib77XLpzHPQH_q0qQ";
+        url =
+          "https://www.youtube.com/feeds/videos.xml?channel_id=UCMiyV_Ib77XLpzHPQH_q0qQ";
         tags = [ "Youtube" ];
         title = "Veronica Explains";
       }
       {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg";
+        url =
+          "https://www.youtube.com/feeds/videos.xml?channel_id=UCR-DXc1voovS8nhAvccRZhg";
         tags = [ "Youtube" ];
         title = "Jeff Geerling";
       }
       {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA";
-        tags = [
-          "Youtube"
-          "Programming"
-        ];
+        url =
+          "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA";
+        tags = [ "Youtube" "Programming" ];
         title = "No Boilerplate";
       }
       {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw";
+        url =
+          "https://www.youtube.com/feeds/videos.xml?channel_id=UCqJ-Xo29CKyLTjn6z2XwYAw";
         tags = [ "Youtube" ];
         title = "Game Maker's Toolkit";
       }
       {
-        url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfg3_hFrOxuEtYMRGsp1ig";
+        url =
+          "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfg3_hFrOxuEtYMRGsp1ig";
         tags = [ "Youtube" ];
       }
 
@@ -119,91 +129,51 @@
       }
       {
         url = "https://myme.no/atom-feed.xml";
-        tags = [
-          "Linux"
-          "Tech"
-          "Blog"
-        ];
+        tags = [ "Linux" "Tech" "Blog" ];
       }
       {
         url = "https://irreal.org/blog/?feed=rss2";
-        tags = [
-          "Tech"
-          "Emacs"
-          "Blog"
-        ];
+        tags = [ "Tech" "Emacs" "Blog" ];
       }
       {
         url = "https://taonaw.com/feed.xml";
-        tags = [
-          "Tech"
-          "Privacy"
-          "Blog"
-        ];
+        tags = [ "Tech" "Privacy" "Blog" ];
       }
       {
         url = "https://anniemueller.com/posts_feed";
-        tags = [
-          "Blog"
-        ];
+        tags = [ "Blog" ];
       }
       {
         url = "https://patrickrhone.micro.blog/feed.xml";
-        tags = [
-          "Blog"
-        ];
+        tags = [ "Blog" ];
       }
       {
         url = "https://mbork.pl/?action=rss;days=30;all=0;showedit=0;full=1";
-        tags = [
-          "Tech"
-          "Emacs"
-          "Blog"
-        ];
+        tags = [ "Tech" "Emacs" "Blog" ];
       }
       {
         url = "https://morss.it/https://planet.emacslife.com/atom.xml";
-        tags = [
-          "Tech"
-          "Emacs"
-          "Blog"
-        ];
+        tags = [ "Tech" "Emacs" "Blog" ];
       }
       {
         url = "https://planet.clojure.in/atom.xml";
-        tags = [
-          "Tech"
-          "Programming"
-          "Blog"
-        ];
+        tags = [ "Tech" "Programming" "Blog" ];
       }
       {
         url = "https://xeiaso.net/blog.rss";
-        tags = [
-          "Tech"
-          "Nix"
-          "Blog"
-        ];
+        tags = [ "Tech" "Nix" "Blog" ];
       }
       {
         url = "https://0xda.de/blog/index.xml";
-        tags = [
-          "Nix"
-          "Tech"
-          "Blog"
-        ];
+        tags = [ "Nix" "Tech" "Blog" ];
       }
       {
         url = "https://xn--gckvb8fzb.com/index.xml";
-        tags = [
-          "Tech"
-          "Linux"
-          "Privacy"
-          "Blog"
-        ];
+        tags = [ "Tech" "Linux" "Privacy" "Blog" ];
       }
       {
-        url = "https://journal.miso.town/atom?url=https://wiki.xxiivv.com/site/now.html";
+        url =
+          "https://journal.miso.town/atom?url=https://wiki.xxiivv.com/site/now.html";
         tags = [ "Blog" ];
         title = "xxiivv";
       }
@@ -217,147 +187,82 @@
       }
       {
         url = "https://determinate.systems/rss.xml";
-        tags = [
-          "Nix"
-          "Blog"
-        ];
+        tags = [ "Nix" "Blog" ];
       }
       {
         url = "https://thewagner.net/feeds/all.atom.xml";
-        tags = [
-          "Nix"
-          "Programming"
-          "Homelab"
-          "Blog"
-        ];
+        tags = [ "Nix" "Programming" "Homelab" "Blog" ];
       }
       {
         url = "https://morss.it/https://jnsgr.uk/posts/index.xml";
-        tags = [
-          "Nix"
-          "Blog"
-        ];
+        tags = [ "Nix" "Blog" ];
       }
       {
         url = "https://morss.it/https://nixcademy.com/feed";
-        tags = [
-          "Nix"
-          "Blog"
-        ];
+        tags = [ "Nix" "Blog" ];
       }
       {
         url = "https://itsfoss.com/rss/";
-        tags = [
-          "Blog"
-          "Linux"
-        ];
+        tags = [ "Blog" "Linux" ];
       }
       {
         url = "https://morss.it/https://ziglang.org/news/index.xml";
-        tags = [
-          "Blog"
-          "Programming"
-        ];
+        tags = [ "Blog" "Programming" ];
       }
       {
         url = "https://blog.rust-lang.org/feed.xml";
-        tags = [
-          "Blog"
-          "Programming"
-        ];
+        tags = [ "Blog" "Programming" ];
       }
       {
         url = "https://thelinuxexp.com/feed.xml";
-        tags = [
-          "Blog"
-          "Linux"
-        ];
+        tags = [ "Blog" "Linux" ];
       }
       {
         url = "https://thelinuxcast.org/feed/feed.xml";
-        tags = [
-          "Blog"
-          "Linux"
-        ];
+        tags = [ "Blog" "Linux" ];
       }
       {
         url = "https://michal.sapka.me/index.xml";
         title = "Michal Sapka";
-        tags = [
-          "Blog"
-          "BSD"
-        ];
+        tags = [ "Blog" "BSD" ];
       }
       {
         url = "https://morss.it/https://izder456.tumblr.com/rss";
-        tags = [
-          "BSD"
-          "Blog"
-        ];
+        tags = [ "BSD" "Blog" ];
       }
       {
         url = "https://morss.it/https://fabiensanglard.net/rss.xml";
-        tags = [
-          "Blog"
-          "Linux"
-          "Tech"
-        ];
+        tags = [ "Blog" "Linux" "Tech" ];
       }
       {
         url = "https://zettelkasten.de/feed.atom";
-        tags = [
-          "Blog"
-          "Notes"
-        ];
+        tags = [ "Blog" "Notes" ];
       }
       {
         url = "https://blog.phundrak.com/index.xml";
-        tags = [
-          "Blog"
-          "Tech"
-          "Emacs"
-        ];
+        tags = [ "Blog" "Tech" "Emacs" ];
       }
       {
         url = "https://vermaden.wordpress.com/feed";
-        tags = [
-          "Blog"
-          "Tech"
-          "BSD"
-        ];
+        tags = [ "Blog" "Tech" "BSD" ];
         title = "vermaden";
       }
       {
         url = "https://morss.it/https://fasterthanli.me/index.xml";
-        tags = [
-          "Blog"
-          "Tech"
-          "Programming"
-        ];
+        tags = [ "Blog" "Tech" "Programming" ];
       }
       {
         url = "https://jcs.org/rss";
         title = "jcs";
-        tags = [
-          "Blog"
-          "BSD"
-          "Retro"
-          "Programming"
-        ];
+        tags = [ "Blog" "BSD" "Retro" "Programming" ];
       }
       {
         url = "https://programmershideaway.xyz/atom.xml";
-        tags = [
-          "Blog"
-          "Programming"
-        ];
+        tags = [ "Blog" "Programming" ];
       }
       {
         url = "https://morss.it/https://www.jeffgeerling.com/blog.xml";
-        tags = [
-          "Blog"
-          "Tech"
-        ];
+        tags = [ "Blog" "Tech" ];
       }
       {
         url = "https://ploum.net/atom_en.xml";
@@ -365,31 +270,19 @@
       }
       {
         url = "https://haseebmajid.dev/posts/index.xml";
-        tags = [
-          "Blog"
-          "Nix"
-        ];
+        tags = [ "Blog" "Nix" ];
       }
       {
         url = "https://heywoodlh.io/feed.xml";
-        tags = [
-          "Blog"
-          "Nix"
-        ];
+        tags = [ "Blog" "Nix" ];
       }
       {
         url = "http://dorotac.eu/atom.xml";
-        tags = [
-          "Blog"
-          "Tech"
-        ];
+        tags = [ "Blog" "Tech" ];
       }
       {
         url = "https://morss.it/https://signal.org/blog/rss.xml";
-        tags = [
-          "Blog"
-          "Privacy"
-        ];
+        tags = [ "Blog" "Privacy" ];
       }
 
       # Updates

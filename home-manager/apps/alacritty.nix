@@ -8,9 +8,9 @@ let
     sha256 = "1r2z223hza63v5lmzlg3022mlar67j3a2gh41rsaiqwja2wyiihz";
   };
   themeName = "catppuccin-mocha";
-in
-{
-  xdg.configFile."alacritty/${themeName}.toml".source = "${alacrittyCatppuccinTheme}/${themeName}.toml";
+in {
+  xdg.configFile."alacritty/${themeName}.toml".source =
+    "${alacrittyCatppuccinTheme}/${themeName}.toml";
 
   programs.alacritty = {
     enable = true;
@@ -23,10 +23,10 @@ in
 
       font = {
         size = 11;
-        bold.family        = "JetBrainsMono Nerd Font";
+        bold.family = "JetBrainsMono Nerd Font";
         bold_italic.family = "JetBrainsMono Nerd Font";
-        italic.family      = "JetBrainsMono Nerd Font";
-        normal.family      = "JetBrainsMono Nerd Font";
+        italic.family = "JetBrainsMono Nerd Font";
+        normal.family = "JetBrainsMono Nerd Font";
       };
 
       cursor = {

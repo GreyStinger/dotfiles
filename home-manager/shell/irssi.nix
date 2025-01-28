@@ -20,12 +20,11 @@ let
     };
   };
   scriptLinks =
-    builtins.foldl' (acc: script: acc // generateScriptLink script) {} scripts;
+    builtins.foldl' (acc: script: acc // generateScriptLink script) { } scripts;
 
   themeLink = { ".irssi/murf.theme" = { source = irssiMurfTheme; }; };
   irssiLinks = scriptLinks // themeLink;
-in
-{
+in {
   home.file = irssiLinks;
 
   programs.irssi = {

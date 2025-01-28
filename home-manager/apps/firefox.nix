@@ -10,8 +10,7 @@ let
     Status = "locked";
   };
   addons = nurPkgs.repos.rycee.firefox-addons;
-in
-{
+in {
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-bin;
@@ -64,7 +63,7 @@ in
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       EnableTrackingProtection = {
-        Value= true;
+        Value = true;
         Locked = true;
         Cryptomining = true;
         Fingerprinting = true;
@@ -75,12 +74,15 @@ in
       OverridePostUpdatePage = "";
       DontCheckDefaultBrowser = true;
       DisplayBookmarksToolbar = "newtab"; # "always", "never" or "newtab"
-      DisplayMenuBar = "default-off"; # "always", "never", "default-off" or "default-on"
+      DisplayMenuBar =
+        "default-off"; # "always", "never", "default-off" or "default-on"
       SearchBar = "separate"; # "separate" or "unified"
 
-
       Preferences = {
-        "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
+        "browser.contentblocking.category" = {
+          Value = "strict";
+          Status = "locked";
+        };
         "extensions.pocket.enabled" = lock-false;
         "extensions.screenshots.disabled" = lock-true;
         "browser.topsites.contile.enabled" = lock-false;
@@ -89,12 +91,17 @@ in
         "browser.search.suggest.enabled.private" = lock-false;
         "browser.urlbar.suggest.searches" = lock-false;
         "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
-        "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
+        "browser.newtabpage.activity-stream.feeds.section.topstories" =
+          lock-false;
         "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
+        "browser.newtabpage.activity-stream.section.highlights.includePocket" =
+          lock-false;
+        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" =
+          lock-false;
+        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" =
+          lock-false;
+        "browser.newtabpage.activity-stream.section.highlights.includeVisited" =
+          lock-false;
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;

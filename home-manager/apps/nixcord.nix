@@ -37,7 +37,7 @@
         whoReacted.enable = false;
       };
     };
-    extraConfig = {};
+    extraConfig = { };
   };
 }
 

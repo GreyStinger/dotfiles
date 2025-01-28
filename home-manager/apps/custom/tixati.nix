@@ -1,38 +1,18 @@
-{ stdenv
-, fetchurl
-, autoPatchelfHook
-, zlib
-, dbus
-, glib
-, gtk3
-, pango
-, gdk-pixbuf
-, dbus-glib
-, cairo
-}:
+{ stdenv, fetchurl, autoPatchelfHook, zlib, dbus, glib, gtk3, pango, gdk-pixbuf
+, dbus-glib, cairo }:
 
-let
-  ver = "3.29-1";
-in
-stdenv.mkDerivation rec {
+let ver = "3.29-1";
+in stdenv.mkDerivation rec {
   pname = "tixati";
   version = ver;
   src = fetchurl {
-    url = "https://download2.tixati.com/download/tixati-${ver}.x86_64.manualinstall.tar.gz";
+    url =
+      "https://download2.tixati.com/download/tixati-${ver}.x86_64.manualinstall.tar.gz";
     hash = "sha256-sOdgwa6jED1RH1R8b/VWvFjHtXAreWzP+NqVvhbm+zw";
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
-  buildInputs = [
-    zlib
-    dbus
-    glib
-    gtk3
-    pango
-    gdk-pixbuf
-    dbus-glib
-    cairo
-  ];
+  buildInputs = [ zlib dbus glib gtk3 pango gdk-pixbuf dbus-glib cairo ];
 
   sourceRoot = ".";
 

@@ -1,20 +1,8 @@
-{ stdenv
-, fetchurl
-, autoPatchelfHook
-, zlib
-, dbus
-, glib
-, gtk3
-, pango
-, gdk-pixbuf
-, dbus-glib
-, cairo
-}:
+{ stdenv, fetchurl, autoPatchelfHook, zlib, dbus, glib, gtk3, pango, gdk-pixbuf
+, dbus-glib, cairo }:
 
-let
-  ver = "1.41";
-in
-stdenv.mkDerivation rec {
+let ver = "1.41";
+in stdenv.mkDerivation rec {
   pname = "darkmx";
   version = ver;
   src = fetchurl {
@@ -23,16 +11,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
-  buildInputs = [
-    zlib
-    dbus
-    glib
-    gtk3
-    pango
-    gdk-pixbuf
-    dbus-glib
-    cairo
-  ];
+  buildInputs = [ zlib dbus glib gtk3 pango gdk-pixbuf dbus-glib cairo ];
 
   sourceRoot = ".";
 

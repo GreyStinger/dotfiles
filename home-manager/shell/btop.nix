@@ -18,11 +18,11 @@ let
   };
 
   theme = "catppuccin-mocha";
-in
-{
+in {
   home.packages = [ btopCatppuccinTheme ];
 
-  xdg.configFile."btop/themes/${theme}.theme".source = "${btopCatppuccinTheme}/share/btop/themes/${theme}.theme";
+  xdg.configFile."btop/themes/${theme}.theme".source =
+    "${btopCatppuccinTheme}/share/btop/themes/${theme}.theme";
 
   programs.btop = {
     enable = true;

@@ -19,8 +19,8 @@
   ];
 
   home.packages = [
-    (pkgs.callPackage ./custom/darkmx.nix {})
-    (pkgs.callPackage ./custom/fopnu.nix {})
-    (pkgs.callPackage ./custom/tixati.nix {})
+    (pkgs.callPackage ./custom/darkmx.nix { })
+    (pkgs.callPackage ./custom/fopnu.nix { })
+    (pkgs.callPackage ./custom/tixati.nix { })
   ];
 }

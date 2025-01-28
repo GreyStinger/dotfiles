@@ -1,11 +1,13 @@
 { config, ... }:
 
 {
-  xdg.configFile."fastfetch/democracy_duck.jpg".source = ../assets/democracy_duck.jpg;
+  xdg.configFile."fastfetch/democracy_duck.jpg".source =
+    ../assets/democracy_duck.jpg;
 
   # Kind of goofed but I don't have a better solution for in tmux as of yet
   programs.zsh.shellAliases = {
-    tfetch = "kitty +kitten icat -n --engine magick --align=left --use-window-size 40,18,1380,1200 ${config.xdg.configHome}/fastfetch/democracy_duck.jpg | fastfetch --raw - --logo-width 40 --logo-height 19";
+    tfetch =
+      "kitty +kitten icat -n --engine magick --align=left --use-window-size 40,18,1380,1200 ${config.xdg.configHome}/fastfetch/democracy_duck.jpg | fastfetch --raw - --logo-width 40 --logo-height 19";
     ctfetch = "clear && tfetch";
   };
   programs.fastfetch = {
@@ -16,9 +18,7 @@
         type = "kitty";
         height = 18;
       };
-      display = {
-        separator = " : ";
-      };
+      display = { separator = " : "; };
       modules = [
         "title"
         "separator"
