@@ -13,12 +13,34 @@
     };
   };
 
-  # Wayland, X, etc. support for session vars
-  # systemd.user.sessionVariables = config.home-manager.users.justinas.home.sessionVariables;
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita-dark";
+    };
+
+    font = {
+      name = "Sans";
+      size = 11;
+    };
+  };
+
+  # TODO: Fix
 
   # qt = {
   #   enable = true;
   #   platformTheme = "gnome";
   #   style = "adwaita-dark";
   # };
+
+  # Wayland, X, etc. support for session vars
+  # systemd.user.sessionVariables =
+  #   config.home-manager.users.jayden.home.sessionVariables;
 }

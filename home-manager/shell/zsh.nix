@@ -1,9 +1,9 @@
 { config, ... }:
 
 let
-  generic-rclone-args = "--buffer-size=32M --vfs-cache-max-age=24h --vfs-cache-mode=full --vfs-read-chunk-size=128M --vfs-read-chunk-size-limit=off --vfs-cache-max-size=10G";
-in
-{
+  generic-rclone-args =
+    "--buffer-size=32M --vfs-cache-max-age=24h --vfs-cache-mode=full --vfs-read-chunk-size=128M --vfs-read-chunk-size-limit=off --vfs-cache-max-size=10G";
+in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -23,8 +23,17 @@ in
       rclone-mount-crypt =
         "rclone mount ${generic-rclone-args} gdrive-crypt: ~/gdrive-crypt -vv";
     };
+    completionInit = ''
+      #compdef open-webui
+
+      _open_webui_completion() {
+        eval $(env _TYPER_COMPLETE_ARGS="$\{words[1,$CURRENT\}" _OPEN_WEBUI_COMPLETE=complete_zsh open-webui)
+      }
+
+      compdef _open_webui_completion open-webui
+    '';
     oh-my-zsh = {
-      enable = true;
+      enable = false;
       plugins = [ "git" ];
     };
     history = {

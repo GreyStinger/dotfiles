@@ -13,7 +13,10 @@
         "~/.config/wallpapers/you_challenge_me.jpg"
         "~/.config/wallpapers/in_my_way.jpg"
       ];
-      wallpaper = [ ", ~/.config/wallpapers/in_my_way.jpg" ];
+      wallpaper = [
+        "eDP-1, ~/.config/wallpapers/you_challenge_me.jpg"
+        "HDMI-A-1, ~/.config/wallpapers/farewell.jpg"
+      ];
     };
   };
 }

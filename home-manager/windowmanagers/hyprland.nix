@@ -11,10 +11,8 @@
       "$mod" = "SUPER";
       "$term" = "kitty";
 
-      monitor = [
-        "eDP-1, 1366x768@60, 0x0, 1"
-        "HDMI-A-1, 1920x1080@75, -1920x0, 1"
-      ];
+      monitor =
+        [ "eDP-1, 1366x768@60, 0x0, 1" "HDMI-A-1, 1920x1080@75, -1920x0, 1" ];
 
       exec-once = [
         "eww daemon"

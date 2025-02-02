@@ -15,14 +15,11 @@ return {
   opts = {
     servers = {
       astro = {},
-      ccls = {},
-      zls = {},
       bashls = {},
+      ccls = {},
       csharp_ls = {},
+      hls = {},
       lemminx = {},
-      texlab = {},
-      svelte = {},
-      pyright = {},
       lua_ls = {
         settings = {
           Lua = {
@@ -35,7 +32,11 @@ return {
             },
           },
         },
-      }
+      },
+      pyright = {},
+      svelte = {},
+      texlab = {},
+      zls = {}
     },
     inlay_hints = { enabled = true },
   },

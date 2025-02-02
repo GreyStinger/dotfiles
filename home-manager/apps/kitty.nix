@@ -27,7 +27,7 @@ in {
       italic_font = "auto";
       bold_italic_font = "auto";
       font_size = 11;
-      window_padding_width = 2;
+      window_padding_width = 8;
       background_opacity = 0.8;
       enable_ligatures = false;
       enable_audio_bell = false;

@@ -12,7 +12,7 @@
         format = "$indicator";
         fish_indicator = "";
         bash_indicator = "[BASH](bright-white) ";
-        zsh_indicator = "[  ](yellow) ";
+        zsh_indicator = "";
       };
       username = {
         style_user = "bright-white bold";
@@ -50,8 +50,8 @@
       };
       jobs = { style = "bright-green bold"; };
       character = {
-        success_symbol = "[\\$](bright-green bold)";
-        error_symbol = "[\\$](bright-red bold)";
+        success_symbol = "[](bright-green bold)";
+        error_symbol = "[](bright-red bold)";
       };
     };
   };

@@ -75,6 +75,7 @@ in {
     keepassxc
     kleopatra
     krita
+    libreoffice
     lua-language-server
     mutt-wizard
     nautilus
@@ -83,6 +84,7 @@ in {
     obs-studio
     obsidian
     openssl
+    # open-webui
     pass
     pavucontrol
     pfetch

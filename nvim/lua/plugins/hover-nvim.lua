@@ -1,3 +1,4 @@
+-- TODO: Fix and renew this file to new standards
 return {
   "lewis6991/hover.nvim",
   name = "hover",
