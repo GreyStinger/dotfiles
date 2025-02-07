@@ -4,9 +4,9 @@ return {
     version = false,
     build = ":TSUpdate",
     -- event = { "BufReadPost", "VeryLazy" },
-    event = "BufReadPost",
+    -- event = "BufReadPost",
     -- lazy = vim.fn.argc(-1) == 0,
-    lazy = true,
+    -- lazy = true,
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     keys = {
       { "<c-space>", desc = "Increment Selection" },
@@ -29,6 +29,7 @@ return {
         "jsdoc",
         "json",
         "jsonc",
+        "latex",
         "lua",
         "luadoc",
         "luap",
@@ -70,10 +71,4 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
-  {
-    "windwp/nvim-ts-autotag",
-    lazy = true,
-    event = "BufReadPost",
-    opts = {},
-  }
 }

@@ -7,38 +7,20 @@ return {
       'nvim-telescope/telescope-ui-select.nvim'
     },
     config = true,
-    keys = {
-      -- {
-      --     "<leader><leader>", function() require('telescope.builtin').buffers() end,
-      --     desc = "Toggle Nvim Tree"
-      -- },
-      -- {
-      --     "<leader>sf", function() require('telescope.builtin').find_files() end,
-      --     desc = "Find file"
-      -- },
-      -- {
-      --     "<leader>sg", function() require('telescope.builtin').live_grep() end,
-      --     desc = "Grep"
-      -- },
-      -- {
-      --     "<leader>sd", function() require('telescope.builtin').diagnostics() end,
-      --     desc = "Diagnostics"
-      -- }
-    },
+
     opts = function()
       local actions = require("telescope.actions")
 
-      local find_files_no_ignore = function()
-        local action_state = require("telescope.actions.state")
-        local line = action_state.get_current_line()
-        LazyVim.telescope("find_files", { no_ignore = true, default_text = line })()
-      end
-      local find_files_with_hidden = function()
-        local action_state = require("telescope.actions.state")
-        local line = action_state.get_current_line()
-        LazyVim.telescope("find_files", { hidden = true, default_text = line })()
-      end
-
+      -- local find_files_no_ignore = function()
+      --   local action_state = require("telescope.actions.state")
+      --   local line = action_state.get_current_line()
+      --   LazyVim.telescope("find_files", { no_ignore = true, default_text = line })()
+      -- end
+      -- local find_files_with_hidden = function()
+      --   local action_state = require("telescope.actions.state")
+      --   local line = action_state.get_current_line()
+      --   LazyVim.telescope("find_files", { hidden = true, default_text = line })()
+      -- end
       return {
         defaults = {
           prompt_prefix = " ",
@@ -58,10 +40,10 @@ return {
           end,
           mappings = {
             i = {
-              ["<c-t>"] = open_with_trouble,
-              ["<a-t>"] = open_with_trouble,
-              ["<a-i>"] = find_files_no_ignore,
-              ["<a-h>"] = find_files_with_hidden,
+              -- ["<c-t>"] = open_with_trouble,
+              -- ["<a-t>"] = open_with_trouble,
+              -- ["<a-i>"] = find_files_no_ignore,
+              -- ["<a-h>"] = find_files_with_hidden,
               ["<C-Down>"] = actions.cycle_history_next,
               ["<C-Up>"] = actions.cycle_history_prev,
               ["<C-f>"] = actions.preview_scrolling_down,
@@ -74,5 +56,35 @@ return {
         },
       }
     end,
+    keys = {
+      {
+        "<leader><leader>",
+        function()
+          require('telescope.builtin').buffers()
+        end,
+        desc = "[ ] Find existing buffers"
+      },
+      {
+        "<leader>sf",
+        function()
+          require('telescope.builtin').find_files()
+        end,
+        desc = "[S]earch [F]iles"
+      },
+      {
+        "<leader>sg",
+        function()
+          require('telescope.builtin').live_grep()
+        end,
+          desc = "[S]earch by [G]rep"
+      },
+      {
+        "<leader>sd",
+        function()
+          require('telescope.builtin').diagnostics()
+        end,
+        desc = "[S]earch [D]iagnostics"
+      }
+    },
   }
 }
