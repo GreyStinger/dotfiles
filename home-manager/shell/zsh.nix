@@ -22,6 +22,7 @@ in {
         "rclone mount ${generic-rclone-args} gdrive: ~/gdrive -vv";
       rclone-mount-crypt =
         "rclone mount ${generic-rclone-args} gdrive-crypt: ~/gdrive-crypt -vv";
+      kta = "bash ~/.config/home-manager/shell/scripts/attach_tmux_in_kitty.sh";
     };
     completionInit = ''
       #compdef open-webui

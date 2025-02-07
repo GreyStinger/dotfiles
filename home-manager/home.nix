@@ -2,7 +2,6 @@
 
 let
   goplaying = inputs.goplaying.packages.${system}.goplaying;
-  zen-browser = inputs.zen-browser.packages.${system}.default;
 in {
   imports = [
     nix-colors.homeManagerModules.default
@@ -11,11 +10,13 @@ in {
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
     ./system/apollo.nix
     ./common
-    ./windowmanagers
     ./git
     ./apps
     ./services
     ./shell
+
+    # Wayland
+    # ./windowmanagers
   ];
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
@@ -33,23 +34,18 @@ in {
 
   home.packages = with pkgs; [
     goplaying
-    zen-browser
-
-    eww
 
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
 
+    acpi # For dwm battery status
     alsa-utils
     arandr
     bash-language-server
     blueman
     brightnessctl
-    bottles
-    busybox # For cpu usage in eww
     caligula # Really good dd cli tool
     calf
-    clang
     cliphist # clipboard stuff
     dbeaver-bin
 
@@ -81,10 +77,9 @@ in {
     nautilus
     nix-index
     nix-prefetch-git
-    obs-studio
+    npins
     obsidian
     openssl
-    # open-webui
     pass
     pavucontrol
     pfetch
@@ -95,10 +90,9 @@ in {
     podman-tui
     postgresql.dev # For python psycopg2
     python312Packages.pygments # For texlive
-    qbittorrent
     rclone # For gdrive mount
     sqlite # For neovim TimeTracker
-    socat # For hyprland eww workspace tracking
+    sysstat
     teams-for-linux
     telegram-desktop
     texlab
@@ -109,12 +103,18 @@ in {
     ueberzugpp # ranger preview
     upower
     virt-manager
-    vlc
     wacomtablet
-    waypaper
-    wl-clipboard # Clipboard manager for wayland
+    xclip
     xdotool
     zoom-us
+
+    # Wayland
+
+    # eww
+    # busybox # Keep disaled because of issues TODO: remove from eww config
+    # socat # For hyprland eww workspace tracking
+    # wl-clipboard # Clipboard manager for wayland
+    # waypaper
   ];
 
   nixpkgs = {

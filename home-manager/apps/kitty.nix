@@ -22,12 +22,13 @@ in {
       "ctrl+shift+right" = "no_op";
     };
     settings = {
+      allow_remote_control = true;
       include = "catppuccin-mocha.conf";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
       font_size = 11;
-      window_padding_width = 8;
+      window_padding_width = 20;
       background_opacity = 0.8;
       enable_ligatures = false;
       enable_audio_bell = false;

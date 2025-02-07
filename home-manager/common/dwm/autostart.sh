@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # dwmblocks &
-bash ~/temp/timer.sh &
+bash ~/.config/home-manager/common/dwm/xroot.sh &
 
 if xrandr | grep 'HDMI-1 connected' | grep -q '+'; then
   bash /home/jayden/.screenlayout/dual_monitor.sh

@@ -9,8 +9,6 @@
     };
     nur.url = "github:nix-community/NUR";
     nix-colors.url = "github:misterio77/nix-colors";
-    zen-browser.url = "github:youwen5/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     hyprcursor-phinger.url = "github:Jappie3/hyprcursor-phinger";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
