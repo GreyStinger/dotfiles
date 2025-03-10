@@ -15,20 +15,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcord = { url = "github:kaylorben/nixcord"; };
-    goplaying = { url = "github:justinmdickey/goplaying"; };
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    goplaying = {
+      url = "github:GreyStinger/goplaying/patch-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nur, nix-colors, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, catppuccin, nur, nix-colors, ... }:
     let
       system = "x86_64-linux";
       username = "jayden";
+
       pkgs = nixpkgs.legacyPackages.${system};
       nurPkgs = import nur { inherit pkgs; };
     in {
-      homeConfigurations."jayden" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ ./home.nix ];
+        modules = [ ./home.nix catppuccin.homeManagerModules.catppuccin ];
 
         extraSpecialArgs = {
           inherit nurPkgs inputs system nix-colors username;

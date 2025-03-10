@@ -47,7 +47,7 @@ in {
         }
         */
       '';
-      extensions = [
+      extensions.packages = [
         addons.ublock-origin
         addons.sponsorblock
         addons.privacy-badger

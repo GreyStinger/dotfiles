@@ -1,5 +1,8 @@
 { config, ... }:
 
+let
+  vnet_iface = "zt6xrvitgr";
+in
 {
   xdg.configFile."fastfetch/democracy_duck.jpg".source =
     ../assets/democracy_duck.jpg;
@@ -60,7 +63,13 @@
         }
         {
           type = "localip";
-          key = "󰛵  Local IP";
+          key = "󰩠  Local IP";
+        }
+        {
+          type = "localip";
+          key = "󰒄  VTUN IP ";
+          defaultRouteOnly = false;
+          namePrefix = vnet_iface;
         }
         "separator"
         {

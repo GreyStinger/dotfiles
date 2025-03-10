@@ -25,6 +25,12 @@ in {
   home.homeDirectory = "/home/jayden";
   home.stateVersion = "23.11";
 
+  catppuccin.flavor = "mocha";
+  catppuccin.enable = true;
+  catppuccin.ghostty.enable = false;
+  catppuccin.nvim.enable = false;
+  catppuccin.tmux.enable = false;
+
   fonts.fontconfig.enable = true;
 
   programs.hyprcursor-phinger.enable = true;
@@ -34,6 +40,7 @@ in {
 
   home.packages = with pkgs; [
     goplaying
+    ladybird
 
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
@@ -55,6 +62,7 @@ in {
     flutter
     ffmpegthumbnailer
     filezilla
+    gcc
     gimp
     glib.dev
     gnumake
@@ -69,7 +77,7 @@ in {
     jdk17
     jq # for eww with hyprland
     keepassxc
-    kleopatra
+    kdePackages.kleopatra
     krita
     libreoffice
     lua-language-server
@@ -77,6 +85,7 @@ in {
     nautilus
     nix-index
     nix-prefetch-git
+    nixfmt-rfc-style
     npins
     obsidian
     openssl
@@ -89,8 +98,10 @@ in {
     podman-desktop
     podman-tui
     postgresql.dev # For python psycopg2
+    poppler_utils
     python312Packages.pygments # For texlive
     rclone # For gdrive mount
+    signal-desktop
     sqlite # For neovim TimeTracker
     sysstat
     teams-for-linux
@@ -108,6 +119,8 @@ in {
     xdotool
     zoom-us
 
+    # Tree sitter
+    tree-sitter-grammars.tree-sitter-latex
     # Wayland
 
     # eww

@@ -29,7 +29,7 @@ opt.swapfile = false
 -- Zig issues on my machine with fmt :/
 -- vim.g.zig_fmt_autosave = false
 
-opt.syntax = "off"
+opt.syntax = "on"
 vim.cmd("filetype plugin on")
 vim.cmd("filetype plugin indent on")
 
@@ -74,6 +74,13 @@ end
 
 vim.cmd('command! CloseEmptyBuffers lua CloseEmptyAndUnnamedBuffers()')
 
+-- Make runs? (Mailnly for my large tex project I'm working on)
+map("n", "<leader>mk", "<cmd>!make<CR>",
+  { noremap = true, silent = true, desc = "[M]a[K]e in current dir"})
+map("n", "<leader>ms", "<cmd>silent !make<CR>",
+  { noremap = true, silent = true, desc = "[M]ake [S]ilent"})
+
+-- Buffer things
 map("n", "<leader>bcu", function() CloseEmptyAndUnnamedBuffers() end,
   { noremap = true, silent = true, desc = "[B]uffers [C]lose all that are [U]nnamed or empty"})
 map("n", "<leader>bca", "<cmd>bufdo bd<CR>",

@@ -64,6 +64,7 @@
       bind b if-shell " [ #{window_panes} -gt '1' ] " { break-pane -a }
 
       # reload config file
+      unbind r
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "~/.config/tmux/tmux.conf reloaded"
     '';
     plugins = with pkgs.tmuxPlugins; [
@@ -72,37 +73,41 @@
         plugin = catppuccin;
         extraConfig = ''
           # Config
+          # set -g @catppuccin_flavor "mocha"
+
+          source-file ~/.config/tmux/catppuccin.conf
 
           # status format
-          set -g @catppuccin_status_background "default"
-          set -g @catppuccin_status_connect_separator "yes"
+          # set -g @catppuccin_status_background "default"
+          # set -g @catppuccin_status_connect_separator "yes"
+          # set -g @catppuccin_window_status_style "slanted"
 
           # window format
-          set -g @catppuccin_window_separator " "
-          set -g @catppuccin_window_left_separator "█"
-          set -g @catppuccin_window_right_separator "█"
-          set -g @catppuccin_window_number_position "left"
-          set -g @catppuccin_window_middle_separator "█ "
-          set -g @catppuccin_window_status_enable "yes"
-          set -g @catppuccin_window_status_icon_enable "no"
+          # set -g @catppuccin_window_separator " "
+          # set -g @catppuccin_window_left_separator "█"
+          # set -g @catppuccin_window_right_separator "█"
+          # set -g @catppuccin_window_number_position "left"
+          # set -g @catppuccin_window_middle_separator "█ "
+          # set -g @catppuccin_window_status_enable "yes"
+          # set -g @catppuccin_window_status_icon_enable "no"
 
           # window default format
-          set -g @catppuccin_window_default_fill "number"
-          set -g @catppuccin_window_default_text "#{s|$USER|~|:#{b:pane_current_path}}"
+          # set -g @catppuccin_window_default_fill "number"
+          # set -g @catppuccin_window_default_text "#{s|$USER|~|:#{b:pane_current_path}}"
 
           # window current format
-          set -g @catppuccin_window_current_fill "number"
-          set -g @catppuccin_window_current_text "#{s|$HOME|~|:pane_current_path}"
+          # set -g @catppuccin_window_current_fill "number"
+          # set -g @catppuccin_window_current_text "#{s|$HOME|~|:pane_current_path}"
 
           # status modules list
-          set -g @catppuccin_status_modules_right "application session date_time"
-          set -g @catppuccin_status_left_separator "█"
-          set -g @catppuccin_status_right_separator "█"
-          set -g @catppuccin_status_right_separator_inverse "no"
-          set -g @catppuccin_status_fill "icon"
+          # set -g @catppuccin_status_modules_right "application session date_time"
+          # set -g @catppuccin_status_left_separator "█"
+          # set -g @catppuccin_status_right_separator "█"
+          # set -g @catppuccin_status_right_separator_inverse "no"
+          # set -g @catppuccin_status_fill "icon"
 
           # config for date_time module
-          set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
+          # set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
         '';
       }
     ];
