@@ -73,6 +73,39 @@
         plugin = catppuccin;
         extraConfig = ''
           # Config
+
+          # general
+          set -g @catppuccin_flavor "mocha"
+          set -g @catppuccin_window_status_style "basic"
+          set -g @catppuccin_status_background "none"
+
+          # window conf
+          set -g @catppuccin_window_number_position 'left'
+          set -g @catppuccin_window_status 'no'
+          set -g @catppuccin_window_default_text "#W"
+          set -g @catppuccin_window_default_fill "number"
+          set -g @catppuccin_window_current_fill "number"
+          set -g @catppuccin_window_current_text "#W"
+          set -g @catppuccin_window_current_color '#{E:@thm_surface_2}'
+          set -g @catppuccin_status_module_text_bg '#{E:@thm_mantle}'
+          set -g @catppuccin_window_current_text " #{b:pane_current_path}"
+          set -g @catppuccin_window_text " #{b:pane_current_path}"
+          set -g @catppuccin_date_time_text " %Y-%m-%d %H:%M:%S"
+
+          # status
+          set -g status-left ""
+
+          set -g @catppuccin_status_left_separator "█"
+          set -g @catppuccin_status_right_separator "█"
+
+          set -g status-right-length 120
+          set -g status-right ""
+          set -ag status-right '#{E:@catppuccin_status_application}'
+          set -ag status-right '#{E:@catppuccin_status_session}'
+          set -ag status-right '#{E:@catppuccin_status_date_time}'
+
+          set -g @catppuccin_status_fill "icon"
+
           # set -g @catppuccin_flavor "mocha"
 
           source-file ~/.config/tmux/catppuccin.conf

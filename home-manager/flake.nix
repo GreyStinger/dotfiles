@@ -36,7 +36,7 @@
       homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ ./home.nix catppuccin.homeManagerModules.catppuccin ];
+        modules = [ ./home.nix catppuccin.homeModules.catppuccin ];
 
         extraSpecialArgs = {
           inherit nurPkgs inputs system nix-colors username;

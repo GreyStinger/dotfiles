@@ -70,4 +70,18 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    version = false,
+    lazy = true,
+    event = "VeryLazy",
+    opts = {
+      enable = true,
+      max_lines = 4,
+      multiline_threashold = 20
+    },
+    config = function(_, opts)
+      require("treesitter-context").setup(opts)
+    end,
+  }
 }

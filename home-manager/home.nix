@@ -27,6 +27,7 @@ in {
 
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
+  catppuccin.cava.transparent = true;
   catppuccin.ghostty.enable = false;
   catppuccin.nvim.enable = false;
   catppuccin.tmux.enable = false;
@@ -114,6 +115,7 @@ in {
     ueberzugpp # ranger preview
     upower
     virt-manager
+    vlc
     wacomtablet
     xclip
     xdotool
