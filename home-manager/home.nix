@@ -5,7 +5,7 @@ let
 in {
   imports = [
     nix-colors.homeManagerModules.default
-    inputs.nixcord.homeManagerModules.nixcord
+    # inputs.nixcord.homeModules.nixcord
     inputs.spicetify-nix.homeManagerModules.default
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
     ./system/apollo.nix
@@ -14,9 +14,6 @@ in {
     ./apps
     ./services
     ./shell
-
-    # Wayland
-    # ./windowmanagers
   ];
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
@@ -64,7 +61,7 @@ in {
     ffmpegthumbnailer
     filezilla
     gcc
-    gimp
+    gimp3
     glib.dev
     gnumake
     gnupg

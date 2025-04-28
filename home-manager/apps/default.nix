@@ -9,7 +9,7 @@
     ./kitty.nix
     ./mpv.nix
     ./neovim.nix
-    ./nixcord.nix
+    # ./nixcord.nix
     ./qutebrowser.nix
     ./rofi.nix
     ./spicetify.nix
