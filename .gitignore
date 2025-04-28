@@ -4,22 +4,11 @@
 !/ranger/
 !/ranger/scope.sh
 !/picom**
-!/cozytile**
 !/xinit**
 !/home-manager**
 !/nixpkgs**
 !/nvim**
-!/qtile**
-!**/mint_install**
-!**/mint_install/**
-/qtile/__**
-!/eww**
-!/wal**
 !/nix**
-!/wal**
-!/qBittorrent/
-!/qBittorrent/catppuccin-mocha.qbtheme
-!/qBittorrent/qBittorrent.conf
 !.git/
 !.gitignore
 

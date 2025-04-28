@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cp -r ~/.config/cozytile/Sakura/. ~/ &&
-wal -b 282738 -i ~/.config/xinit/qtile_wallpapers/120_-_KnFPX73.jpg &&
-qtile cmd-obj -o cmd -f restart
-
