@@ -72,6 +72,13 @@ return {
         desc = "[S]earch [F]iles"
       },
       {
+        "<leader>si",
+        function()
+          require('telescope.builtin').find_files({ hidden = true })
+        end,
+        desc = "[S]earch [F]iles"
+      },
+      {
         "<leader>sg",
         function()
           require('telescope.builtin').live_grep()

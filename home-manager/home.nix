@@ -5,7 +5,6 @@ let
 in {
   imports = [
     nix-colors.homeManagerModules.default
-    # inputs.nixcord.homeModules.nixcord
     inputs.spicetify-nix.homeManagerModules.default
     inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
     ./system/apollo.nix
@@ -14,6 +13,7 @@ in {
     ./apps
     ./services
     ./shell
+    ./games/osu.nix
   ];
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
@@ -33,12 +33,12 @@ in {
 
   programs.hyprcursor-phinger.enable = true;
 
-  # Pywal temp until I get hellwal working on nix
-  programs.pywal.enable = true;
+  services.picom = {
+    enable = false;
+  };
 
   home.packages = with pkgs; [
     goplaying
-    ladybird
 
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
@@ -47,16 +47,18 @@ in {
     alsa-utils
     arandr
     bash-language-server
+    blender
     blueman
+    bottles
     brightnessctl
     caligula # Really good dd cli tool
     calf
     cliphist # clipboard stuff
     dbeaver-bin
-
-    dmenu # for dwm
+    drawio
     easyeffects
     feh
+    figma-linux
     flutter
     ffmpegthumbnailer
     filezilla
@@ -65,7 +67,6 @@ in {
     glib.dev
     gnumake
     gnupg
-    godot_4
     hamster
     heroic
     imagemagick
@@ -79,39 +80,35 @@ in {
     krita
     libreoffice
     lua-language-server
-    mutt-wizard
     nautilus
     nix-index
     nix-prefetch-git
     nixfmt-rfc-style
     npins
+    obs-studio
     obsidian
     openssl
+    p7zip
     pass
     pavucontrol
     pfetch
-    picom # TODO Migrate to services .nix
     podman
     podman-compose
     podman-desktop
     podman-tui
-    postgresql.dev # For python psycopg2
     poppler_utils
-    python312Packages.pygments # For texlive
+    protonmail-desktop
+    protonmail-bridge
     rclone # For gdrive mount
     signal-desktop
-    sqlite # For neovim TimeTracker
-    sysstat
+    sqlite
+    sysstat # Questionable - was this fo dwm?
     teams-for-linux
     telegram-desktop
-    texlab
-    texliveFull
     thunderbird
-    tor-browser-bundle-bin
     ripgrep
     ueberzugpp # ranger preview
     upower
-    virt-manager
     vlc
     wacomtablet
     xclip
@@ -120,13 +117,6 @@ in {
 
     # Tree sitter
     tree-sitter-grammars.tree-sitter-latex
-    # Wayland
-
-    # eww
-    # busybox # Keep disaled because of issues TODO: remove from eww config
-    # socat # For hyprland eww workspace tracking
-    # wl-clipboard # Clipboard manager for wayland
-    # waypaper
   ];
 
   nixpkgs = {
@@ -139,7 +129,6 @@ in {
 
   home.pointerCursor = {
     gtk.enable = true;
-    # x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 16;
@@ -149,6 +138,13 @@ in {
     EDITOR = "nvim";
     CC = "clang";
     CXX = "clang++";
+  };
+
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
   };
 
   programs.home-manager.enable = true;

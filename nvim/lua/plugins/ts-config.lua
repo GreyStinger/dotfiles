@@ -16,8 +16,5 @@ return {
       }
     }
   },
-  -- config = function(opts)
-  --   require('typ')
-  -- end,
   ft = { "typescript", "typescriptreact" },
 }
