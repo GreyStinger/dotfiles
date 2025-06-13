@@ -20,7 +20,6 @@ in {
         live_config_reload = true;
         import = [ "~/.config/alacritty/${themeName}.toml" ];
       };
-
       font = {
         size = 11;
         bold.family = "JetBrainsMono Nerd Font";
@@ -28,7 +27,6 @@ in {
         italic.family = "JetBrainsMono Nerd Font";
         normal.family = "JetBrainsMono Nerd Font";
       };
-
       cursor = {
         unfocused_hollow = false;
         style = {
@@ -36,19 +34,16 @@ in {
           shape = "Block";
         };
       };
-
       env = {
         TERM = "xterm-256color";
         WINIT_X11_SCALE_FACTOR = "1.0";
       };
-
       window = {
         decorations = "full";
         dynamic_title = true;
         opacity = 0.96;
         startup_mode = "Windowed";
       };
-
       window = {
         dimensions = {
           columns = 82;

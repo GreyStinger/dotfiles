@@ -21,6 +21,9 @@
       set -g extended-keys on
       set -sag terminal-features 'xterm*:extkeys'
 
+      # Forward escape code to applications
+      set -g allow-passthrough on
+
       # Enable focus events
       set -g focus-events on
 

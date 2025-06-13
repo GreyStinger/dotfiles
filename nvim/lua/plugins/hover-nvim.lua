@@ -2,37 +2,36 @@
 return {
   "lewis6991/hover.nvim",
   name = "hover",
-  lazy = true,
-  event = "VeryLazy",
-  init = function()
-    require("hover.providers.lsp")
-    require("hover.providers.man")
-    require('hover.providers.diagnostic')
-  end,
+  lazy = false,
   opts = {
-    preview_opts = {
-      border = "rounded"
-    },
+    init = function()
+      require("hover.providers.lsp")
+      require("hover.providers.man")
+      require('hover.providers.diagnostic')
+    end,
+    preview_opts = { border = "rounded" },
     preview_window = true,
     title = true,
   },
   config = function(_, opts)
     require("hover").setup(opts)
-
-    -- Setup keymaps
-    vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
-    vim.keymap.set("n", "gK", require("hover").hover_select,
-      {desc = "hover.nvim (select)"})
-    vim.keymap.set("n", "<C-p>", function()
-        require("hover").hover_switch("previous")
-      end, {desc = "hover.nvim (previous source)"})
-    vim.keymap.set("n", "<C-n>", function()
-        require("hover").hover_switch("next")
-      end, {desc = "hover.nvim (next source)"})
-
-    -- vim.keymap.set("n", "<leader>hd", function()
-    --     require("hover").hover
-    --   end, { noremap = true, desc = "Show hover diagnostics" })
   end,
+  keys = {
+    -- {'K', function() require("hover").hover() end, desc = "hover.nvim"},
+    {'K', function()
+        local clients = vim.lsp.get_clients({ bufnr = 0 })
+        for _, client in ipairs(clients) do
+          if client:supports_method("textDocument/hover") then
+            require("hover").hover()
+            return
+          end
+        end
+        print("No hover information available")
+      end, desc = "hover.nvim"
+    },
+    {'gK', function() require("hover").hover_select() end, desc = "hover.nvim (select)"},
+    {'<C-p>', function() require("hover").hover_switch("previous") end, desc = "hover.nvim (previous source)"},
+    {'<C-n>', function() require("hover").hover_switch("next") end, desc = "hover.nvim (next source)"},
+  }
 }
 
